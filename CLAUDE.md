@@ -31,10 +31,21 @@ Answers persist in localStorage `hbtp:profile:v2`. "Start the preview over" in t
 - Video budget: **max 3 clips playing at once**. Priority: hero, open game page, swipe card.
 - 91 games in `DATA`. 36 have tile art. Missing art falls back to initials discs. That's accepted.
 
-## Code map (in checkpoint-8.html)
+## Code map
 
-- `const MEDIA` plus three `Object.assign(MEDIA, {...})` blocks: every image and clip, keyed (`tile_*`, `ex_*` clips, `ex_*_p` posters, `art_*`, `sfp_*`/`sfx_*` Slotsfinder posters and clips).
-- `const DATA = {games:[...]}`: per game `n` name, `s` studio, `v` volatility, `m` max win, `t` themes, `f` features, `c` dominant colour.
+Repo layout (Phase 0):
+
+- `index.html`: markup. `<!--hb:style base-->` and `<!--hb:style hb-polish-->` are replaced at build time by `vite/hbStyles.js` with `src/styles/base.css` and `src/styles/hb-polish.css`, so `<style id="hb-polish">` survives into every build.
+- `src/main.js`: entry. Loads `fonts.js` (self-hosted Google Fonts), then `app/lobby.js` (the main app, one module), then `design/explore-desktop.js`.
+- `src/media.js`: builds `MEDIA` (`{key: url}`) from `assets/media/<key>.<ext>`. `assets/brand/` holds the TP logo and mascot.
+- `src/data/data.json`: `DATA`.
+- `scripts/extract_media.py`: regenerates all of the above from the checkpoint (overwrites hand edits).
+- `tests/parity.py`: checkpoint vs build vs single, both layouts. `PW_CHROMIUM=/path/to/chrome` if Playwright's bundled browser is missing.
+
+In checkpoint-8.html (names are unchanged in the repo):
+
+- `const MEDIA` plus three `Object.assign(MEDIA, {...})` blocks: every image and clip, keyed (`tile_*`, `ex_*` Explore clips, `ex_*_p` posters, `trhd_*` HD trailer clips and `trhd_*_p` posters for the 6 heroes, `art_*`, `sfp_*`/`sfx_*` Slotsfinder posters and clips).
+- `const DATA = {games:[...], heroes:[...]}`: per game `n` name, `s` studio, `v` volatility, `m` max win, `t` themes, `f` features, `c` dominant colour. `heroes` are the 6 featured games (`id` matches the media keys) with `grid`, `win`, `buy` and `copy`.
 - Key constants: `STYLES`, `TASTE`, `SAMPLE`, `STORE`, `VCAP` (video cap), `MAXP` (max picks), `SFCLIP`.
 - Key functions: `score`, `similar`, `applyProfile`, `heroesRanked`, `dnaHeadline`, `renderRows`, `renderDesk`, `buildLobby`, `renderTaster`, `renderSwipe`, `openExplore`, `togglePw`.
 - `<style id="hb-polish">` is Design's presentation layer. The last `<script>` is Design's additive desktop Explore player.

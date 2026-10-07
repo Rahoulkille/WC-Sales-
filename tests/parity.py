@@ -55,6 +55,8 @@ async def run(p, url, target, layout, rm):
     pg = await ctx.new_page()
     errs, steps = [], {}
     pg.on('pageerror', lambda e: errs.append(str(e)))
+    # Thursday runs locally: any request off this machine is worth knowing about.
+    pg.on('request', lambda r: r.url.startswith('http') and not r.url.startswith('http://127.0.0.1') and errs.append('external: ' + r.url[:90]))
     pg.on('console', lambda m: m.type == 'error' and 'favicon' not in (m.location or {}).get('url', '') and errs.append('console: ' + m.text[:200]))
     pg.on('response', lambda r: r.status >= 400 and not r.url.endswith('favicon.ico') and errs.append('%d %s' % (r.status, r.url[-80:])))
 
