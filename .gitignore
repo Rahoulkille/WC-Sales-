@@ -1,0 +1,6 @@
+node_modules/
+dist/
+dist-single/
+tests/out/
+__pycache__/
+*.png.tmp

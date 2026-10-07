@@ -1,0 +1,711 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Turbo Pickle · Business Wiki v1</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#0D1117; --panel:#141B23; --panel2:#10161D; --line:#263241;
+  --ink:#E9EEF3; --muted:#93A1AF; --faint:#5D6B79;
+  --green:#35E0A1; --pink:#FF3D8F; --amber:#FFB454; --red:#FF6B6B; --blue:#6BB7FF;
+  --serif:'Fraunces', Georgia, serif;
+  --sans:'Inter', -apple-system, sans-serif;
+  --mono:'JetBrains Mono', ui-monospace, monospace;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--ink);font-family:var(--sans);font-size:16px;line-height:1.65;-webkit-font-smoothing:antialiased}
+a{color:var(--green);text-decoration:none}
+a:hover{text-decoration:underline}
+.layout{display:grid;grid-template-columns:250px 1fr;max-width:1240px;margin:0 auto}
+nav{position:sticky;top:0;height:100vh;overflow-y:auto;padding:36px 20px 36px 28px;border-right:1px solid var(--line)}
+nav .brand{font-family:var(--mono);font-size:11px;letter-spacing:.14em;color:var(--pink);text-transform:uppercase;margin-bottom:4px}
+nav .brand2{font-family:var(--serif);font-size:20px;font-weight:600;margin-bottom:20px}
+nav ol{list-style:none}
+nav li{margin-bottom:2px}
+nav a{display:block;color:var(--muted);font-size:12.5px;padding:5px 8px;border-radius:6px;line-height:1.35}
+nav a:hover{color:var(--ink);background:var(--panel);text-decoration:none}
+nav .num{font-family:var(--mono);font-size:10px;color:var(--faint);margin-right:6px}
+main{padding:0 48px 120px 56px;max-width:900px}
+header.hero{padding:72px 0 40px;border-bottom:1px solid var(--line);margin-bottom:8px}
+.eyebrow{font-family:var(--mono);font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--green);margin-bottom:14px}
+.eyebrow.pink{color:var(--pink)}
+h1{font-family:var(--serif);font-size:46px;font-weight:600;line-height:1.1;letter-spacing:-.01em;margin-bottom:18px}
+.hero p.lede{font-size:17px;color:var(--muted);max-width:620px}
+.meta{display:flex;gap:22px;flex-wrap:wrap;margin-top:26px;font-family:var(--mono);font-size:11px;color:var(--faint)}
+.meta b{color:var(--muted);font-weight:500}
+section{padding:56px 0 8px;border-bottom:1px solid var(--line)}
+section:last-of-type{border-bottom:none}
+h2{font-family:var(--serif);font-size:30px;font-weight:600;line-height:1.15;margin:8px 0 6px}
+h3{font-family:var(--serif);font-size:19px;font-weight:600;margin:34px 0 10px}
+h4{font-size:13.5px;font-weight:600;margin:24px 0 6px;color:var(--ink)}
+p{margin-bottom:14px;color:#C7D0D9;max-width:72ch}
+p.tight{margin-bottom:8px}
+strong{color:var(--ink)}
+.ownerline{font-family:var(--mono);font-size:11px;color:var(--faint);margin:2px 0 22px}
+.ownerline b{color:var(--muted);font-weight:500}
+.tag{display:inline-block;font-family:var(--mono);font-size:10px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;padding:3px 9px;border-radius:99px;vertical-align:middle;margin-left:2px}
+.tag.agreed{color:var(--green);border:1px solid rgba(53,224,161,.4);background:rgba(53,224,161,.07)}
+.tag.contested{color:var(--pink);border:1px solid rgba(255,61,143,.4);background:rgba(255,61,143,.07)}
+.tag.unknown{color:var(--muted);border:1px solid rgba(147,161,175,.35);background:rgba(147,161,175,.06)}
+.tag.decision{color:var(--amber);border:1px solid rgba(255,180,84,.45);background:rgba(255,180,84,.08)}
+.tag.draft{color:var(--blue);border:1px solid rgba(107,183,255,.4);background:rgba(107,183,255,.07)}
+.panel{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:22px 24px;margin:20px 0}
+.panel.q{border-left:3px solid var(--amber)}
+.panel.q h4{margin-top:0;color:var(--amber);font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase}
+.panel.fact{border-left:3px solid var(--green)}
+.panel ul{margin:6px 0 4px 18px}
+.panel li{margin-bottom:8px;color:#C7D0D9;font-size:14.5px}
+.fill{font-family:var(--mono);font-size:12px;color:var(--amber);background:rgba(255,180,84,.09);border:1px dashed rgba(255,180,84,.4);border-radius:5px;padding:1px 7px;white-space:nowrap}
+table{width:100%;border-collapse:collapse;margin:20px 0;font-size:13.5px}
+th{font-family:var(--mono);font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);text-align:left;padding:9px 12px;border-bottom:1px solid var(--line);font-weight:500}
+td{padding:11px 12px;border-bottom:1px solid rgba(38,50,65,.55);vertical-align:top;color:#C7D0D9}
+td b, td strong{color:var(--ink);font-weight:600}
+tr:hover td{background:rgba(20,27,35,.6)}
+.mono{font-family:var(--mono);font-size:12px}
+.small{font-size:13px;color:var(--muted)}
+figure{margin:26px 0}
+figcaption{font-family:var(--mono);font-size:11px;color:var(--faint);margin-top:10px;letter-spacing:.06em}
+svg text{font-family:var(--sans)}
+svg .svgmono{font-family:var(--mono)}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:20px 0}
+.swot{border:1px solid var(--line);border-radius:12px;padding:18px 20px;background:var(--panel)}
+.swot h4{margin:0 0 10px;font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase}
+.swot.s h4{color:var(--green)} .swot.w h4{color:var(--pink)}
+.swot.o h4{color:var(--blue)} .swot.t h4{color:var(--amber)}
+.swot ul{list-style:none}
+.swot li{font-size:13.5px;margin-bottom:10px;padding-left:14px;position:relative;color:#C7D0D9}
+.swot li:before{content:"·";position:absolute;left:0;color:var(--faint)}
+.kpi{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:14px;margin:22px 0}
+.kpi .cell{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:16px 16px 13px}
+.kpi .n{font-family:var(--serif);font-size:27px;font-weight:600;color:var(--green)}
+.kpi .n.pink{color:var(--pink)}
+.kpi .l{font-size:11.5px;color:var(--muted);margin-top:4px;line-height:1.4}
+.statuskey{display:flex;gap:10px;flex-wrap:wrap;margin:18px 0 6px}
+.rule-note{font-size:13px;color:var(--muted);border-left:2px solid var(--line);padding-left:14px;margin:16px 0}
+@media(max-width:900px){
+  .layout{grid-template-columns:1fr}
+  nav{position:relative;height:auto;border-right:none;border-bottom:1px solid var(--line);padding:24px}
+  nav ol{display:none}
+  main{padding:0 20px 80px}
+  h1{font-size:32px} h2{font-size:24px}
+  .grid2{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+<div class="layout">
+<nav>
+  <div class="brand">Turbo Pickle</div>
+  <div class="brand2">Business Wiki</div>
+  <ol>
+    <li><a href="#s0"><span class="num">00</span>How this document works</a></li>
+    <li><a href="#s1"><span class="num">01</span>What we are</a></li>
+    <li><a href="#s2"><span class="num">02</span>The engine</a></li>
+    <li><a href="#s3"><span class="num">03</span>The ladder</a></li>
+    <li><a href="#s4"><span class="num">04</span>Buyers &amp; taxonomy</a></li>
+    <li><a href="#s5"><span class="num">05</span>Go-to-market</a></li>
+    <li><a href="#s6"><span class="num">06</span>Competitors</a></li>
+    <li><a href="#s7"><span class="num">07</span>What we say no to</a></li>
+    <li><a href="#s8"><span class="num">08</span>SWOT</a></li>
+    <li><a href="#s9"><span class="num">09</span>Metrics &amp; instrumentation</a></li>
+    <li><a href="#s10"><span class="num">10</span>Exit thesis</a></li>
+    <li><a href="#s11"><span class="num">11</span>Open questions register</a></li>
+  </ol>
+</nav>
+<main>
+
+<header class="hero">
+  <div class="eyebrow pink">Internal · Leadership working document · v1.1 · 10 Aug 2026</div>
+  <h1>The Turbo Pickle wiki.<br>One place, one truth.</h1>
+  <p class="lede">Everything we believe about the business, written down, with an honest label on each claim: agreed, contested, unknown, or waiting on a decision. Two jobs: find where we are not aligned before the market does it for us, and flesh out the practical and technical build - what must be refined, shipped and automated - that our strategy actually depends on.</p>
+  <div class="meta">
+    <span><b>Maintained by:</b> Rahoul (via the Claude project)</span>
+    <span><b>Review rhythm:</b> Thursday regroup</span>
+    <span><b>Supersedes:</b> nothing — this is the first source of truth</span>
+  </div>
+</header>
+<section id="s0">
+  <div class="eyebrow">00 · Rules of the road</div>
+  <h2>How this document works <span class="tag agreed">Agreed format</span></h2>
+  <div class="ownerline"><b>Owner:</b> Rahoul · <b>Status meaning:</b> the tag on each section reflects the group's position, not the author's</div>
+  <p>This is the foundational wiki for the business. If it is not in here, it is not agreed. If it is in here and wrong, fix it here first, then everywhere else. It lives in the pinned Claude project, which the group already agreed is the source of truth for these deliberations, and it gets updated through that project - ask for the change, a new version ships.</p>
+  <p><strong>The primary objective of this document is practical:</strong> to flesh out what must actually be refined, shipped and automated - product by product, tool by tool - for the business to run its current phase well and earn its next one. The strategy sections give those build decisions their why; the readiness board in section 03 is where the work lives.</p>
+  <p class="tight">Every section carries a status tag and an owner. The tags mean exactly one thing each:</p>
+  <div class="statuskey">
+    <span class="tag agreed">Agreed</span>
+    <span class="tag contested">Contested</span>
+    <span class="tag unknown">Unknown</span>
+    <span class="tag decision">Decision needed</span>
+    <span class="tag draft">Draft for validation</span>
+  </div>
+  <p class="small" style="margin-top:10px"><b style="color:var(--green)">Agreed</b>: the group has said yes, on record (usually in a Thursday regroup). <b style="color:var(--pink)">Contested</b>: two or more of us believe different things. <b style="color:var(--muted)">Unknown</b>: nobody knows; needs research or data. <b style="color:var(--amber)">Decision needed</b>: known options, no call made. <b style="color:var(--blue)">Draft for validation</b>: written in good faith, awaiting group review.</p>
+  <p>Anything marked <span class="fill">FILL</span> is a number or fact we should have and don't have written down. Filling those is part of the exercise: every FILL that turns out to be hard to fill is telling us something about our instrumentation.</p>
+</section>
+
+<section id="s1">
+  <div class="eyebrow">01 · Identity</div>
+  <h2>What we are: two phases, one destination <span class="tag agreed">Direction agreed 6 Aug · trigger numbers pending</span></h2>
+  <div class="ownerline"><b>Owner:</b> Andrew (external narrative) / whole group (substance) · <b>Source:</b> strategy session 6 Aug 2026, refined 10 Aug</div>
+
+  <p>We are running two strategies in sequence, deliberately, with a defined gate between them. They are distinct phases, not a blend - and the boundary between them is the most important management object in this document.</p>
+
+  <h3>Phase 1 · now · The Outcomes Play</h3>
+  <p><strong>Turbo Pickle is the performance layer for casino marketing.</strong> We know casino games better than anyone, and we sell what that knowledge does: creative that carries what a game feels like, every game dressed for the lobby, campaigns measured where it counts. Narrow and high; margin proves fast and funds itself. The engine never leaves the building - <em>except as shipped product</em>, covered below. This is not a waiting room. It has active clients (FanDuel, Hard Rock Digital, Flutter brands, Evolution, Betway, Hollywoodbets), it fits the vision, and it is a complete, viable business that will still exist inside Phase 2 as the top layer.</p>
+
+  <h3>Phase 2 · on trigger · The Two-Layer Play</h3>
+  <p><strong>Turbo Pickle becomes the content and intelligence infrastructure for online casino.</strong> A base layer of live game data and media - wide, cheap, zero-touch - sold behind an engineered airlock; a top layer of served intelligence and applied outcomes where margin, differentiation and case studies live. The wide-and-cheap intelligence play survives inside this phase as the base rungs of the ladder, kept commercially viable by watermarking, hashed embeddings, rate limits and licence terms with teeth. Deep intelligence - the tuned weights, the raw embedding space, the engines - is never for sale, in any phase.</p>
+
+  <figure>
+  <svg viewBox="0 0 820 300" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Two phase model with transition trigger gate">
+    <defs><marker id="arrP" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L10 5L0 10z" fill="#5D6B79"/></marker></defs>
+    <!-- Phase 1 -->
+    <rect x="30" y="60" width="280" height="150" rx="12" fill="rgba(255,61,143,.08)" stroke="#FF3D8F" stroke-opacity=".6"/>
+    <text x="170" y="90" text-anchor="middle" fill="#FF3D8F" font-size="11" class="svgmono">PHASE 1 · NOW</text>
+    <text x="170" y="116" text-anchor="middle" fill="#E9EEF3" font-size="16" font-weight="600">The Outcomes Play</text>
+    <text x="170" y="140" text-anchor="middle" fill="#93A1AF" font-size="11.5">Sell what the knowledge does.</text>
+    <text x="170" y="158" text-anchor="middle" fill="#93A1AF" font-size="11.5">Narrow &amp; high · engine stays home,</text>
+    <text x="170" y="176" text-anchor="middle" fill="#93A1AF" font-size="11.5">except as shipped, protected product</text>
+    <text x="170" y="198" text-anchor="middle" fill="#FF3D8F" font-size="10.5" class="svgmono">ACTIVE CLIENTS · REVENUE TODAY</text>
+    <!-- Gate -->
+    <rect x="352" y="42" width="116" height="186" rx="12" fill="#141B23" stroke="#FFB454" stroke-dasharray="6 4"/>
+    <text x="410" y="68" text-anchor="middle" fill="#FFB454" font-size="11" class="svgmono">THE GATE</text>
+    <text x="410" y="94" text-anchor="middle" fill="#E9EEF3" font-size="11.5" font-weight="600">T1 Commercial</text>
+    <text x="410" y="126" text-anchor="middle" fill="#E9EEF3" font-size="11.5" font-weight="600">T2 Products ready</text>
+    <text x="410" y="158" text-anchor="middle" fill="#E9EEF3" font-size="11.5" font-weight="600">T3 Automation live</text>
+    <text x="410" y="190" text-anchor="middle" fill="#E9EEF3" font-size="11.5" font-weight="600">T4 Protection built</text>
+    <text x="410" y="216" text-anchor="middle" fill="#FFB454" font-size="10" class="svgmono">ALL FOUR REQUIRED</text>
+    <!-- Phase 2 -->
+    <rect x="510" y="60" width="280" height="150" rx="12" fill="rgba(53,224,161,.07)" stroke="#35E0A1" stroke-opacity=".6"/>
+    <text x="650" y="90" text-anchor="middle" fill="#35E0A1" font-size="11" class="svgmono">PHASE 2 · ON TRIGGER</text>
+    <text x="650" y="116" text-anchor="middle" fill="#E9EEF3" font-size="16" font-weight="600">The Two-Layer Play</text>
+    <text x="650" y="140" text-anchor="middle" fill="#93A1AF" font-size="11.5">Base layer wide &amp; cheap behind the airlock;</text>
+    <text x="650" y="158" text-anchor="middle" fill="#93A1AF" font-size="11.5">outcomes stay on top as the margin layer.</text>
+    <text x="650" y="176" text-anchor="middle" fill="#93A1AF" font-size="11.5">Phase 1 lives on inside it.</text>
+    <text x="650" y="198" text-anchor="middle" fill="#35E0A1" font-size="10.5" class="svgmono">INFRASTRUCTURE MULTIPLE</text>
+    <!-- arrows -->
+    <line x1="310" y1="135" x2="348" y2="135" stroke="#5D6B79" stroke-width="1.5" marker-end="url(#arrP)"/>
+    <line x1="468" y1="135" x2="506" y2="135" stroke="#5D6B79" stroke-width="1.5" marker-end="url(#arrP)"/>
+    <!-- one-way door -->
+    <text x="410" y="262" text-anchor="middle" fill="#93A1AF" font-size="11.5">The gate is a <tspan fill="#FF6B6B" font-weight="600">one-way door</tspan>: once the Feed is sold wide, it cannot be recalled.</text>
+    <text x="410" y="282" text-anchor="middle" fill="#5D6B79" font-size="11">Phase 1 forecloses nothing. The data opens later, from strength, on our terms.</text>
+  </svg>
+  <figcaption>FIG 1 · Two phases, one gate. The trigger is a decision made now, waiting for its evidence.</figcaption>
+  </figure>
+
+  <h3>The transition trigger</h3>
+  <p class="tight">A compound gate. <strong>All four conditions required</strong> - any three without the fourth is not the trigger. Each condition is a tracked number (section 09), so the transition happens on evidence, not on mood or opportunity.</p>
+  <table>
+    <tr><th></th><th>Condition</th><th>Measured as</th><th>Status</th></tr>
+    <tr><td class="mono">T1</td><td><b>Commercial proof.</b> Productised, recurring revenue is real and concentration is broken.</td><td>≥ <span class="fill">N contracts</span> productised recurring deals live · Hard Rock concentration &lt; <span class="fill">X %</span></td><td><span class="tag decision">Ratify N, X on Thursday</span></td></tr>
+    <tr><td class="mono">T2</td><td><b>Product readiness.</b> Every ladder rung refined, shipped, ready to go - not roadmap, shelf.</td><td>Readiness board (section 03) fully green</td><td><span class="tag draft">Board drafted, needs filling</span></td></tr>
+    <tr><td class="mono">T3</td><td><b>Internal automation.</b> Tooling shipped so new-client inbound scales without radically increasing headcount.</td><td>Human-exception rate below threshold · onboarding time per new client · <span class="fill">FILL: thresholds</span></td><td><span class="tag draft">Tool list in section 03</span></td></tr>
+    <tr><td class="mono">T4</td><td><b>Protection engineered.</b> The airlock exists before the Feed scales.</td><td>Watermarking, hashed embeddings, rate limits, licence terms - built and tested</td><td><span class="tag unknown">Build state unknown</span></td></tr>
+  </table>
+
+  <p><strong>Why a hard phase boundary and not a blend:</strong> two reasons from the strategy debate, both still true. First, the exposure fork is the one irreversible decision in the business - selling shallow data wide cannot be undone, so it should be walked through deliberately, from strength, with T4 done. Second, running both revenue ramps at once demands two full motions from a company our size; T3 is what makes the second motion affordable. Phasing is how we avoid being pigeonholed as only-ever-B without paying C's costs before we can carry them.</p>
+
+  <p><strong>Ready products ship in Phase 1.</strong> Where a base-layer product is refined, shipped and protected, we sell it now - the metadata feed is the first, sanctioned and live in the SkyCity proposal. This is not scope creep and not a breach of the phase rule; it is the Phase 2 muscle being built one finished product at a time. The rule is the readiness, not the calendar: unfinished base-layer products do not get sold early because a deal is tempting.</p>
+
+  <h3>Vision, naming, tone</h3>
+  <p>"To transform how casino games find their audience" - true in both phases; the audience is the point, the intelligence is the means. It is all Turbo Pickle; Wildcards will be sunset, with staff comms in the company update inside two weeks, framed as an identity shift. Tone of voice is agreed: informal, direct, no jargon, knowledgeable. "Game DNA" remains the one piece of vocabulary we allow ourselves.</p>
+
+  <div class="panel q">
+    <h4>Alignment check for the group</h4>
+    <ul>
+      <li><b>Ratify the trigger numbers.</b> T1 needs its N and X. Propose, argue once, write them in. Everything else in the gate is build work, not debate.</li>
+      <li><b>The say/do gap, named.</b> In Phase 1 we sell outcomes while telling an engine story. The website must hold both: products sell, the "how we do it" section carries the infrastructure narrative as show-don't-claim. Are we comfortable that "infrastructure" as a self-description waits for Phase 2? (Links to Q1.)</li>
+      <li><b>Who calls the trigger?</b> When the four conditions read green, someone still has to say "we are now in Phase 2" and re-cut pricing, site and sales motion. Name the forum: suggested - any Thursday regroup where the section 09 dashboard shows all four green for a full quarter.</li>
+    </ul>
+  </div>
+</section>
+
+<section id="s2">
+  <div class="eyebrow">02 · The moat</div>
+  <h2>The engine <span class="tag draft">Draft for validation</span></h2>
+  <div class="ownerline"><b>Owner:</b> Joe (build) · <b>Source:</b> SkyCity deck v6, Aug 2026</div>
+
+  <p>One engine sits behind everything, in both phases. We play every game automatically on release, record and measure it, and extract the detail from the game itself rather than the supplier's marketing pack. The output is one structured record per game - the Game DNA - which every product line reads from. Completing it is priority one: <strong>100% of the active catalogue observed, embedded and enriched.</strong> In Phase 1 the record powers outcomes; in Phase 2 it is also the base-layer product. Same engine, wider door.</p>
+
+  <div class="kpi">
+    <div class="cell"><div class="n">45,000+</div><div class="l">games played and recorded, hundreds more weekly</div></div>
+    <div class="cell"><div class="n">555+</div><div class="l">structured fields per game, taken from play</div></div>
+    <div class="cell"><div class="n">14</div><div class="l">categories in the Game DNA record</div></div>
+    <div class="cell"><div class="n pink"><span class="fill" style="font-size:16px">FILL: %</span></div><div class="l">of the active catalogue currently covered (the claim vs reality gap)</div></div>
+  </div>
+
+  <p>The pipeline, plainly: game announced → played automatically on release → record built (every field, art and video captured) → assets generated in the client's design system → humans check specs, brand and compliance → live on release day. The manual industry equivalent is three to five days per game; ours is same day, every game. The margin engine underneath is <strong>human-exception operation</strong>: every workflow automated to exceptions-only. That same discipline, applied to client onboarding and delivery, is trigger condition T3.</p>
+
+  <div class="panel fact">
+    <h4 style="margin-top:0;color:var(--green);font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase">Proof points we already put in front of clients</h4>
+    <ul>
+      <li>~40% of a game's launches come through the homepage trailer placement; 62% of those players launch another game from it (live operator deployment).</li>
+      <li>Explore Shorts: +12% eGGR per user A/B tested against control, +6% games played per user, ~$1k modelled GGR per user in full-screen format.</li>
+      <li>Live with FanDuel, Hard Rock Digital, Flutter brands, Evolution, Betway and Hollywoodbets. 32 staff, 80% engineering.</li>
+    </ul>
+  </div>
+
+  <div class="panel q">
+    <h4>Alignment check for the group</h4>
+    <ul>
+      <li><b>Coverage number.</b> "45,000+ games" is the ingested total. What percentage of the <em>active regulated-market catalogue</em> is that? This single number is the gap between the infrastructure claim and reality; it should be on a weekly dashboard, not estimated in meetings.</li>
+      <li><b>Field accuracy.</b> We say the record is "checked against what the supplier declared." Do we have an error/discrepancy rate we can quote? A diligence process will ask.</li>
+      <li><b>Cost per game observed.</b> <span class="fill">FILL: £/game</span> - the unit economics of the future base layer start here.</li>
+    </ul>
+  </div>
+</section>
+
+<section id="s3">
+  <div class="eyebrow">03 · Value architecture &amp; build state</div>
+  <h2>The ladder, and the readiness board <span class="tag decision">Naming &amp; pricing open · board needs filling</span></h2>
+  <div class="ownerline"><b>Owner:</b> Rahoul (commercial) + Joe (product mechanics &amp; readiness) · <b>Source:</b> Strategy C paper, phased 10 Aug</div>
+
+  <p>Four rungs, now explicitly phased. In Phase 1 we sell the top rung, plus any lower rung whose product is genuinely finished and protected (metadata feed: yes, sanctioned). The rest of the ladder is built during Phase 1 and switched on at the gate. Nothing is crippled; everything above is simply better.</p>
+
+  <figure>
+  <svg viewBox="0 0 820 400" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="The four rung ladder, phased">
+    <defs><marker id="arr2" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L10 5L0 10z" fill="#5D6B79"/></marker></defs>
+    <g>
+      <rect x="40" y="316" width="740" height="62" rx="10" fill="rgba(147,161,175,.07)" stroke="#5D6B79"/>
+      <text x="64" y="342" fill="#E9EEF3" font-size="15" font-weight="600">1 · Snapshot</text>
+      <text x="64" y="362" fill="#93A1AF" font-size="12">Free. A point-in-time cut of the record. Goes stale by design - staleness is the sales motion.</text>
+      <text x="756" y="352" text-anchor="end" fill="#5D6B79" font-size="11" class="svgmono">FREE · PHASE 2</text>
+    </g>
+    <g>
+      <rect x="80" y="230" width="660" height="62" rx="10" fill="rgba(53,224,161,.08)" stroke="#35E0A1" stroke-opacity=".6"/>
+      <text x="104" y="256" fill="#E9EEF3" font-size="15" font-weight="600">2 · Feed</text>
+      <text x="104" y="276" fill="#93A1AF" font-size="12">Live data and media into their systems. Metadata feed is shipped &amp; selling now; wide sale waits for T4.</text>
+      <text x="716" y="266" text-anchor="end" fill="#35E0A1" font-size="11" class="svgmono">PHASE 1 WHERE READY · SCALES PHASE 2</text>
+    </g>
+    <g>
+      <rect x="120" y="144" width="580" height="62" rx="10" fill="rgba(107,183,255,.08)" stroke="#6BB7FF" stroke-opacity=".6"/>
+      <text x="144" y="170" fill="#E9EEF3" font-size="15" font-weight="600">3 · Served intelligence</text>
+      <text x="144" y="190" fill="#93A1AF" font-size="12">Answers through an API - never vectors, never weights. Search, similarity, segments.</text>
+      <text x="676" y="180" text-anchor="end" fill="#6BB7FF" font-size="11" class="svgmono">PHASE 2 · PRICE TBD</text>
+    </g>
+    <g>
+      <rect x="160" y="58" width="500" height="62" rx="10" fill="rgba(255,61,143,.09)" stroke="#FF3D8F" stroke-opacity=".65"/>
+      <text x="184" y="84" fill="#E9EEF3" font-size="15" font-weight="600">4 · Applied outcomes</text>
+      <text x="184" y="104" fill="#93A1AF" font-size="12">Creative automation, tiles, video, personalisation - deployed and measured. Phase 1's whole business.</text>
+      <text x="636" y="94" text-anchor="end" fill="#FF3D8F" font-size="11" class="svgmono">£££ · SELLING TODAY</text>
+    </g>
+    <line x1="20" y1="360" x2="20" y2="80" stroke="#5D6B79" stroke-width="1.5" marker-end="url(#arr2)"/>
+    <text x="14" y="220" fill="#5D6B79" font-size="10" class="svgmono" transform="rotate(-90 14 220)" text-anchor="middle">MARGIN · DIFFERENTIATION</text>
+    <line x1="800" y1="80" x2="800" y2="360" stroke="#5D6B79" stroke-width="1.5" marker-end="url(#arr2)"/>
+    <text x="812" y="220" fill="#5D6B79" font-size="10" class="svgmono" transform="rotate(90 812 220)" text-anchor="middle">REACH · STICKINESS</text>
+    <text x="410" y="26" text-anchor="middle" fill="#93A1AF" font-size="12">Every rung a real product. The wide-and-cheap intelligence play lives in rungs 1–2, protected by the airlock.</text>
+  </svg>
+  <figcaption>FIG 2 · The ladder, phased. Rung 4 is Phase 1's business; rungs 1–3 are built now, sold at scale after the gate.</figcaption>
+  </figure>
+
+  <h3>What each rung must have before it sells at scale</h3>
+  <table>
+    <tr><th>Rung</th><th>Phase</th><th>Named &amp; priced</th><th>Protection mechanics</th><th>Status</th></tr>
+    <tr><td><b>Snapshot</b></td><td>Phase 2 (funnel top)</td><td>Named. Free by design.</td><td>Staleness is the protection</td><td><span class="tag decision">Decision needed</span></td></tr>
+    <tr><td><b>Feed</b></td><td>Phase 1 where product ready (metadata: live) · scales Phase 2</td><td><span class="fill">FILL: price</span></td><td>Watermarking, hashed embeddings, rate limits, licence teeth - <b>T4, before wide sale</b></td><td><span class="tag agreed">Metadata sanctioned</span> <span class="tag decision">Scale gated</span></td></tr>
+    <tr><td><b>Served</b></td><td>Phase 2</td><td><span class="fill">FILL: price</span></td><td>Answers only, never vectors; per-product-line exposure rules</td><td><span class="tag draft">Draft</span></td></tr>
+    <tr><td><b>Applied</b></td><td>Phase 1, live</td><td>Per engagement today; target: productised recurring for the first ten contracts</td><td>Contractual; case-study capture embedded in early contracts</td><td><span class="tag agreed">Selling now</span></td></tr>
+  </table>
+
+  <h3>The readiness board - the practical heart of this document</h3>
+  <p>Two tables. The first is trigger condition T2: is each product refined, shipped, and ready to take inbound without heroics? The second is T3: the internal automation that lets us absorb new clients without radically increasing headcount. Green across both boards, plus T1 and T4, is the gate. <strong>Filling this honestly is the single most useful thing that can come out of the Thursday session.</strong></p>
+
+  <h4>Board A · Products (trigger T2)</h4>
+  <table>
+    <tr><th>Product (canonical cohort)</th><th>Refined?</th><th>Shipped?</th><th>Ready for inbound at volume?</th><th>What's missing / owner</th></tr>
+    <tr><td><b>Tiles / Rich Media</b> <span class="mono">TILES</span></td><td><span class="fill">FILL</span></td><td><span class="fill">FILL</span></td><td><span class="fill">FILL</span></td><td><span class="fill">FILL</span> · Joe</td></tr>
+    <tr><td><b>Programmatic Video / UGC</b> <span class="mono">UGC</span></td><td><span class="fill">FILL</span></td><td><span class="fill">FILL</span></td><td><span class="fill">FILL</span></td><td><span class="fill">FILL</span> · Joe</td></tr>
+    <tr><td><b>Game DNA / Metadata feed</b> <span class="mono">GAMEDNA</span></td><td><b style="color:var(--green)">Yes</b></td><td><b style="color:var(--green)">Yes</b></td><td><span class="fill">FILL: verify at volume</span></td><td>Sanctioned; first productised feed deal in the SkyCity proposal</td></tr>
+    <tr><td><b>Data / Personalisation</b> <span class="mono">DATA</span></td><td><span class="fill">FILL</span></td><td><span class="fill">FILL</span></td><td><span class="fill">FILL</span></td><td><span class="fill">FILL</span> · Joe / James</td></tr>
+    <tr><td><b>SlotsFinder / Discovery</b> <span class="mono">DISCOVERY</span></td><td><span class="fill">FILL</span></td><td><span class="fill">FILL</span></td><td><span class="fill">FILL</span></td><td><span class="fill">FILL</span> · Joe</td></tr>
+  </table>
+
+  <h4>Board B · Internal automation tooling (trigger T3)</h4>
+  <table>
+    <tr><th>Capability</th><th>Purpose</th><th>Status</th><th>Owner</th></tr>
+    <tr><td><b>Capture &amp; ingestion pipeline</b></td><td>New games observed automatically, human-exception only</td><td><span class="fill">FILL</span></td><td>Joe</td></tr>
+    <tr><td><b>Asset generation pipelines</b> (tiles, banners, video, playables)</td><td>Per-title production with no per-title human effort</td><td><span class="fill">FILL: which are one-click, which still need hands</span></td><td>Joe</td></tr>
+    <tr><td><b>QA / human-check tooling</b></td><td>Specs, brand, compliance review at throughput, not bottleneck</td><td><span class="fill">FILL</span></td><td>Joe / Sarah</td></tr>
+    <tr><td><b>Client onboarding</b> (brief → brand rules → first delivery)</td><td>New client live without radically increasing headcount - the exact wording of T3</td><td><span class="fill">FILL: current elapsed days &amp; human hours per onboard</span></td><td>Sarah</td></tr>
+    <tr><td><b>Delivery &amp; CMS/ad-platform integration</b></td><td>Ingest-ready output into their schema, per client, repeatably</td><td><span class="fill">FILL</span></td><td>Joe / James</td></tr>
+    <tr><td><b>Pipeline &amp; revenue instrumentation</b></td><td>HubSpot timestamped stages, dedup, deal tracking (section 09)</td><td>Live, calibrating</td><td>James</td></tr>
+    <tr><td><b>Protection stack</b> (T4): watermarking, hashed embeddings, rate limits, licence templates</td><td>The airlock, built before the Feed scales</td><td><span class="tag unknown">Unknown</span></td><td>Joe / founders</td></tr>
+  </table>
+
+  <div class="panel q">
+    <h4>Alignment check for the group</h4>
+    <ul>
+      <li><b>Fill both boards before or during Thursday.</b> Every FILL that nobody can answer in the room is a finding, not an embarrassment.</li>
+      <li><b>Rung names are internal Strategy language.</b> Snapshot / Feed / Served / Applied - external product names or internal architecture, with the five product areas as the shop window? Must resolve before pricing pages exist.</li>
+      <li><b>The per-product-line exposure table is still unwritten.</b> For each product: outputs and shallow data yes, tools and deep data no. Draft it, argue it once, close it - it is part of T4.</li>
+      <li><b>Feed pricing philosophy:</b> cheap enough to be a no-brainer, expensive enough to matter at scale. Someone proposes a number.</li>
+    </ul>
+  </div>
+</section>
+<section id="s4">
+  <div class="eyebrow">04 · Who pays us</div>
+  <h2>Buyers &amp; the one true taxonomy <span class="tag contested">Contested: three vocabularies in play</span></h2>
+  <div class="ownerline"><b>Owner:</b> Rahoul · <b>Risk:</b> vocabulary drift - we already caught this once in the Origami pipeline</div>
+
+  <p>We currently describe the same buyers three different ways: the outbound cohort enum, the Strategy C ladder, and the SkyCity deck's application framing. Each is right in its own context, but if we do not pin the mapping, sales, product and marketing will slowly mean different things by the same words. The table below is the proposed canonical reconciliation. <strong>Argue with it, then freeze it.</strong></p>
+
+  <table>
+    <tr><th>Canonical cohort (enum)</th><th>Product area</th><th>Buyer &amp; the job they're hiring us for</th><th>Ladder rung</th><th>Deck framing</th></tr>
+    <tr><td class="mono">TILES</td><td><b>Tiles / Rich Media</b></td><td>Head of Casino / Casino Ops - every game dressed for the lobby, same day, on brand</td><td>Applied (built on Feed)</td><td>Product · Tiles</td></tr>
+    <tr><td class="mono">UGC</td><td><b>Programmatic Video / UGC</b></td><td>CMO / Head of Acquisition / Performance - campaign creative at catalogue speed</td><td>Applied</td><td>Paid Media · Creative Automation</td></tr>
+    <tr><td class="mono">GAMEDNA</td><td><b>Game DNA / Metadata</b></td><td>Head of Casino / Content / Platform - one accurate record per game, into their schema</td><td>Feed → Served</td><td>Product · Metadata</td></tr>
+    <tr><td class="mono">DATA</td><td><b>Data / Personalisation</b></td><td>CRM Director / Head of CRM - segments before they have players, targeting from what games are</td><td>Served</td><td>Metadata application · Personalisation + CRM</td></tr>
+    <tr><td class="mono">DISCOVERY</td><td><b>SlotsFinder / Discovery</b></td><td>Head of Product / UX - semantic search, recommendations, product pages at catalogue scale</td><td>Served → Applied</td><td>Metadata applications · Search + Product Pages</td></tr>
+    <tr><td class="mono">EXEC</td><td><b>Executive tier</b></td><td>C-suite - the category story; sponsor for multi-line deals</td><td>Whole ladder</td><td>The "one engine" narrative</td></tr>
+  </table>
+
+  <h3>Customer focus</h3>
+  <p><strong>Regulated-market operators running their own platform</strong>, in the two familiar profiles. The TAM is a normalised set of operator groups across regions: Tier A (top groups, worked manually from the main domain) and Tier B (long-tail in-house operators, automated outbound from the dedicated sending domain). Suppliers get switched on later, from strength. Affiliates are parked. We do not lead with the lobby or product surfaces anywhere - entry is through marketing outcomes or the Feed, per the tracks in section 05.</p>
+
+  <div class="panel q">
+    <h4>Alignment check for the group</h4>
+    <ul>
+      <li><b>Is the Head of Casino or the CMO the primary economic buyer</b> when both are in an account? The dual-track answer is "depends on temperature," which is fine operationally, but the case-study strategy and the website hero cannot serve both equally. Pick the lead persona for the launch narrative.</li>
+      <li><b>Suppliers "later, from strength"</b> - what is the trigger? Evolution is already live with us; the boundary between "client" and "channel" for suppliers is fuzzier than this paragraph implies.</li>
+      <li><b>Tier A / Tier B cut line:</b> <span class="fill">FILL: how many groups in A, how many in B</span>. It exists in the Origami build; it should be stated here so leadership shares the number.</li>
+    </ul>
+  </div>
+</section>
+
+<section id="s5">
+  <div class="eyebrow">05 · Motion</div>
+  <h2>Go-to-market <span class="tag draft">Draft for validation</span></h2>
+  <div class="ownerline"><b>Owner:</b> Rahoul (system) · Andrew (narrative) · James (HubSpot/data)</div>
+
+  <p>Two entry tracks, split by account temperature, converging on the same ladder - and <strong>dual-track is live now, in Phase 1</strong>: cold accounts through automated outbound (Origami), warm accounts through the founder network and trade shows. Two tracks is also the maximum - anything that does not fit the ladder does not ship. What changes at the Phase 2 gate is not the tracks but what they sell: today both tracks land outcomes (plus ready products like the metadata feed); after the gate, the cold track can also land the Feed self-serve.</p>
+
+  <figure>
+  <svg viewBox="0 0 820 300" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Dual track go to market flow">
+    <defs><marker id="arr3" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L10 5L0 10z" fill="#5D6B79"/></marker></defs>
+    <!-- cold track -->
+    <rect x="30" y="40" width="230" height="86" rx="10" fill="rgba(107,183,255,.07)" stroke="#6BB7FF" stroke-opacity=".55"/>
+    <text x="145" y="66" text-anchor="middle" fill="#6BB7FF" font-size="11" class="svgmono">COLD · TIER B</text>
+    <text x="145" y="88" text-anchor="middle" fill="#E9EEF3" font-size="13.5" font-weight="600">Marketing surfaces first</text>
+    <text x="145" y="107" text-anchor="middle" fill="#93A1AF" font-size="11.5">Outcome-paid buyers · CMO first</text>
+    <!-- warm track -->
+    <rect x="30" y="176" width="230" height="86" rx="10" fill="rgba(53,224,161,.07)" stroke="#35E0A1" stroke-opacity=".55"/>
+    <text x="145" y="202" text-anchor="middle" fill="#35E0A1" font-size="11" class="svgmono">WARM · FOUNDER NETWORK</text>
+    <text x="145" y="224" text-anchor="middle" fill="#E9EEF3" font-size="13.5" font-weight="600">Land the Feed directly</text>
+    <text x="145" y="243" text-anchor="middle" fill="#93A1AF" font-size="11.5">Heads of Casino · relationship-led</text>
+    <!-- middle mechanics -->
+    <rect x="320" y="40" width="220" height="86" rx="10" fill="#141B23" stroke="#263241"/>
+    <text x="430" y="66" text-anchor="middle" fill="#93A1AF" font-size="11" class="svgmono">MECHANICS</text>
+    <text x="430" y="87" text-anchor="middle" fill="#E9EEF3" font-size="12.5">Origami: discovery, enrichment,</text>
+    <text x="430" y="104" text-anchor="middle" fill="#E9EEF3" font-size="12.5">two-phase search, sequencing</text>
+    <rect x="320" y="176" width="220" height="86" rx="10" fill="#141B23" stroke="#263241"/>
+    <text x="430" y="202" text-anchor="middle" fill="#93A1AF" font-size="11" class="svgmono">MECHANICS</text>
+    <text x="430" y="223" text-anchor="middle" fill="#E9EEF3" font-size="12.5">Direct conversations, demos,</text>
+    <text x="430" y="240" text-anchor="middle" fill="#E9EEF3" font-size="12.5">conference anchors: G2E, SBC Lisbon</text>
+    <!-- converge -->
+    <rect x="600" y="106" width="190" height="90" rx="10" fill="rgba(255,61,143,.08)" stroke="#FF3D8F" stroke-opacity=".6"/>
+    <text x="695" y="134" text-anchor="middle" fill="#FF3D8F" font-size="11" class="svgmono">CONVERGENCE</text>
+    <text x="695" y="156" text-anchor="middle" fill="#E9EEF3" font-size="13.5" font-weight="600">The same ladder</text>
+    <text x="695" y="175" text-anchor="middle" fill="#93A1AF" font-size="11.5">HubSpot: dedup + deal tracking</text>
+    <line x1="260" y1="83" x2="316" y2="83" stroke="#5D6B79" stroke-width="1.5" marker-end="url(#arr3)"/>
+    <line x1="260" y1="219" x2="316" y2="219" stroke="#5D6B79" stroke-width="1.5" marker-end="url(#arr3)"/>
+    <line x1="540" y1="83" x2="596" y2="130" stroke="#5D6B79" stroke-width="1.5" marker-end="url(#arr3)"/>
+    <line x1="540" y1="219" x2="596" y2="172" stroke="#5D6B79" stroke-width="1.5" marker-end="url(#arr3)"/>
+  </svg>
+  <figcaption>FIG 3 · Dual-track entry. Cold lands frictionless outcomes; warm lands the Feed. Both climb the same ladder.</figcaption>
+  </figure>
+
+  <h3>Current system state</h3>
+  <p>Outbound runs on Origami (discovery, enrichment, sequencing; sends from connected mailboxes; CRM integration read-only) with HubSpot free tier for dedup and post-engagement deal tracking. The two-phase search architecture is designed and calibrating on FanDuel as the test account: Phase 1 is broad recall with no seniority filtering (so vanity titles do not silently drop good contacts), Phase 2 classifies into the canonical cohorts. Three canonical repo files govern it: <span class="mono">CLAUDE.md</span>, <span class="mono">phase2-prompt.md</span>, <span class="mono">targeting-prompt.md</span>. Opener copy and sequence content are deliberately deferred until the systems build stabilises and positioning is locked. Tier B cold volume runs from a dedicated sending domain, separate from the main domain.</p>
+
+  <h3>Launch sequencing (Turbo Pickle)</h3>
+  <p>Launch phases (distinct from the business phases above): gating → teaser → soft launch (coordinated LinkedIn announcement, simple site with HubSpot-integrated signup, conference anchors G2E and SBC Lisbon) → full commercial launch. The gating item - product strategy direction - cleared on 6 Aug. The next gate is <strong>positioning narrative sign-off</strong>: no downstream copy, one-pagers or sales assets before it. Andrew's website draft is the venue for that argument.</p>
+
+  <h3>The say/do gap, handled on purpose</h3>
+  <p>In Phase 1 we sell outcomes while telling an engine story. That gap is a feature if we manage it and a credibility problem if we don't. The rule for all external material: <strong>products sell, the engine shows.</strong> The "how we do it" section carries the infrastructure narrative as demonstration - coverage counters, the record, Game DNA - without claiming to be infrastructure before the base layer is on sale. When the gate opens, the claim catches up with the story.</p>
+
+  <div class="panel q">
+    <h4>Alignment check for the group</h4>
+    <ul>
+      <li><b>Cold-track promise vs delivery capacity.</b> The cold track sells outcomes "frictionless, contracts in days." What is our real capacity for new outcome deals per quarter, today, before the T3 automation lands? <span class="fill">FILL: n deals/quarter</span>. This number is why T3 exists: outbound volume and onboarding automation must scale together, or we win deals we can't absorb.</li>
+      <li><b>Who owns warm-track coverage?</b> Founder network selling does not scale and is not instrumented by default. Every warm conversation should still land in HubSpot with a timestamped stage, or the diligence data has a hole shaped exactly like our best deals.</li>
+      <li><b>Conference budget and goals for G2E / SBC Lisbon:</b> <span class="fill">FILL: budget, target meetings, target signups</span>.</li>
+    </ul>
+  </div>
+</section>
+
+<section id="s6">
+  <div class="eyebrow">06 · The field</div>
+  <h2>Competitors <span class="tag draft">Draft for validation · researched 10 Aug 2026</span></h2>
+  <div class="ownerline"><b>Owner:</b> Rahoul · <b>Method:</b> primary-source review of each company's positioning, clients and funding; group to add win/loss experience</div>
+
+  <p>Ten named companies, mapped against two axes: how casino-native they are, and whether they compete on the creative/media side or the data/intelligence side of our business. Nobody sits where we sit - combining observed game intelligence with casino-native creative automation and delivery pipes - but every rung of our ladder has a specialist gunning for it. The moat is the combination, not any single rung.</p>
+
+  <figure>
+  <svg viewBox="0 0 820 470" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Competitor positioning map">
+    <!-- axes -->
+    <line x1="410" y1="40" x2="410" y2="420" stroke="#263241" stroke-width="1.5"/>
+    <line x1="60" y1="230" x2="760" y2="230" stroke="#263241" stroke-width="1.5"/>
+    <text x="410" y="28" text-anchor="middle" fill="#93A1AF" font-size="11" class="svgmono">CASINO / GAMING NATIVE</text>
+    <text x="410" y="444" text-anchor="middle" fill="#93A1AF" font-size="11" class="svgmono">GENERIC / CROSS-INDUSTRY</text>
+    <text x="52" y="234" text-anchor="end" fill="#93A1AF" font-size="11" class="svgmono">CREATIVE &amp; MEDIA</text>
+    <text x="768" y="234" text-anchor="start" fill="#93A1AF" font-size="11" class="svgmono">DATA &amp; INTELLIGENCE</text>
+    <!-- Turbo Pickle spanning marker -->
+    <rect x="290" y="58" width="240" height="40" rx="20" fill="rgba(255,61,143,.14)" stroke="#FF3D8F"/>
+    <text x="410" y="83" text-anchor="middle" fill="#FF3D8F" font-size="14" font-weight="700">TURBO PICKLE</text>
+    <text x="410" y="112" text-anchor="middle" fill="#5D6B79" font-size="10.5">spans both sides · casino-native · observed data</text>
+    <!-- top-left: casino native creative -->
+    <circle cx="215" cy="150" r="6" fill="#35E0A1"/><text x="228" y="154" fill="#E9EEF3" font-size="12.5">Lobby Magic</text>
+    <!-- top-right: casino native data -->
+    <circle cx="560" cy="140" r="6" fill="#35E0A1"/><text x="573" y="144" fill="#E9EEF3" font-size="12.5">VAIX (Sportradar)</text>
+    <circle cx="610" cy="185" r="6" fill="#35E0A1"/><text x="623" y="189" fill="#E9EEF3" font-size="12.5">Optimove</text>
+    <!-- upper-middle-left: gaming-adjacent creative -->
+    <circle cx="150" cy="205" r="6" fill="#6BB7FF"/><text x="163" y="209" fill="#E9EEF3" font-size="12.5">Sett AI (mobile games)</text>
+    <!-- bottom-left: generic creative -->
+    <circle cx="120" cy="290" r="6" fill="#93A1AF"/><text x="133" y="294" fill="#E9EEF3" font-size="12.5">Smartly.io</text>
+    <circle cx="175" cy="330" r="6" fill="#93A1AF"/><text x="188" y="334" fill="#E9EEF3" font-size="12.5">Hunch</text>
+    <circle cx="255" cy="285" r="6" fill="#93A1AF"/><text x="268" y="289" fill="#E9EEF3" font-size="12.5">Bannerflow</text>
+    <circle cx="235" cy="370" r="6" fill="#93A1AF"/><text x="248" y="374" fill="#E9EEF3" font-size="12.5">Storyteq (ITG)</text>
+    <circle cx="140" cy="400" r="6" fill="#93A1AF"/><text x="153" y="404" fill="#E9EEF3" font-size="12.5">CHILI publish</text>
+    <!-- bottom-right: generic data-ish -->
+    <circle cx="580" cy="380" r="6" fill="#5D6B79"/><text x="593" y="384" fill="#93A1AF" font-size="12.5">Turtl (B2B content — fit queried)</text>
+  </svg>
+  <figcaption>FIG 4 · The field, 10 Aug 2026. Green = casino/iGaming-native. Blue = gaming-adjacent. Grey = generic platforms with iGaming verticals or clients.</figcaption>
+  </figure>
+
+  <h3>The map, company by company</h3>
+  <table>
+    <tr><th>Company</th><th>What they actually are</th><th>Where they hit our ladder</th><th>Why we win / why we lose</th></tr>
+    <tr>
+      <td><b>Lobby Magic</b><br><span class="small">iGaming-native, appears early-stage, self-serve</span></td>
+      <td>Casino thumbnail/tile automation: brand templates, safe zones, badges, one-click animation, release-roadmap automation, API into the CMS. Squarely aimed at our Tiles buyer.</td>
+      <td>Applied (Tiles) - our most direct single-rung competitor</td>
+      <td><b>Win:</b> they compose from supplier promo packs and templates; we compose from observed gameplay and hold the DNA, so tiles are one output of a record, not the product. <b>Lose:</b> if a Tier B operator just wants cheap self-serve tiles today, they are live and simple. Watch their pricing.</td>
+    </tr>
+    <tr>
+      <td><b>VAIX</b><br><span class="small">iGaming-native · acquired by Sportradar</span></td>
+      <td>"iGaming's most comprehensive AI engine": casino and sports personalisation, recommendations, marketing insights, responsible gambling. Clients include Tipico, Coral, Danske Spil - <b>and Hard Rock Digital</b>. Integrates with Optimove and major platforms.</td>
+      <td>Served (Data/Personalisation, Discovery)</td>
+      <td><b>Win:</b> their intelligence is built on player transaction data; ours is built on the games themselves - we can segment and recommend from day one, before an operator has player history, and our record feeds creative too. <b>Lose:</b> they are certified, embedded, Sportradar-backed, and already inside our biggest client. Their acquisition is also our best exit comp - see section 10.</td>
+    </tr>
+    <tr>
+      <td><b>Optimove</b><br><span class="small">iGaming-dominant CRM · Gartner Visionary</span></td>
+      <td>The default CRM/orchestration layer in iGaming: bet365, Entain, FDJ United/Kindred, Caesars, Penn. Now shipping "Creative power" - instant asset generation inside campaigns - and AI agents.</td>
+      <td>Served (CRM surface) + creeping into Applied (creative)</td>
+      <td><b>Frame as partner first:</b> Game DNA is the game-level data their operator clients lack; a feed into Optimove segments is distribution, not competition. <b>Threat:</b> their creative generation improves and the operator asks why they need us for campaign assets. The answer must stay "because ours come from the actual game."</td>
+    </tr>
+    <tr>
+      <td><b>Sett AI</b><br><span class="small">Mobile gaming UA · $57M raised, Series B Mar 2026</span></td>
+      <td>Agentic AI for game UA creative: video + playable ads generated, tested and optimised in a learning loop. Clients: Playtika, SuperPlay. Publicly expanding beyond gaming into fintech, apps, ecommerce.</td>
+      <td>Applied (UGC/Video, playables) - in the adjacency, not the beachhead</td>
+      <td><b>Win (today):</b> they do not do iGaming, compliance-localised creative, or lobby/product surfaces; no game observation record. <b>Lose (tomorrow):</b> they are the best-funded version of "creative agents for games" and iGaming is an obvious expansion. They are also the incumbent threat in our own mobile-gaming expansion plan. Named threat, tracked quarterly.</td>
+    </tr>
+    <tr>
+      <td><b>Smartly.io</b><br><span class="small">Enterprise, cross-industry</span></td>
+      <td>AI advertising platform unifying creative production, media buying and intelligence across social, CTV, DSPs. The heavyweight in paid-social automation (Uber, Spotify, Samsung).</td>
+      <td>Applied (paid media creative)</td>
+      <td><b>Win:</b> feed-and-template driven, no casino nativity, no gameplay capture, no compliance-per-market slot creative. <b>Lose:</b> a large operator's performance team may already run Smartly and see us as a feature. Position as the casino-native source that makes their Smartly stack better, not a rip-and-replace.</td>
+    </tr>
+    <tr>
+      <td><b>Hunch</b><br><span class="small">Cross-industry, has a Betting &amp; Gaming vertical</span></td>
+      <td>Creative performance platform for Meta/Snap/TikTok: enriched DPAs, catalog product video, hyper-localisation. Meta Business Partner. Sells "real-time, relevant offers for gaming audiences."</td>
+      <td>Applied (paid social)</td>
+      <td><b>Win:</b> same shape as Smartly but smaller - catalog-feed logic, not game intelligence; localisation of offers, not compliance-grade casino creative from captured gameplay. <b>Lose:</b> cheaper and faster for a pure paid-social team that already has assets.</td>
+    </tr>
+    <tr>
+      <td><b>Bannerflow</b><br><span class="small">Cross-industry, explicit iGaming vertical</span></td>
+      <td>Creative automation for display/social with DCO, versioning, real-time campaign management. Betway case study (10× faster ad production); Kaizen Gaming testimonial (12 countries, 4 matches a day, real-time).</td>
+      <td>Applied (display/banners)</td>
+      <td><b>Win:</b> it is a versioning tool - a designer still builds the master; nothing knows what the game is. We generate the master from the game itself. <b>Lose:</b> already embedded in iGaming in-house studios (Betway is our client and plausibly theirs); switching cost is real. Know the overlap accounts. <span class="fill">FILL: which of our clients run Bannerflow?</span></td>
+    </tr>
+    <tr>
+      <td><b>Storyteq (ITG)</b><br><span class="small">Enterprise CMP · 4× Gartner MQ Leader</span></td>
+      <td>Content marketing platform: DAM + creative automation + workflow + AI insights. Heineken, BMW, Sky - <b>and Entain</b>.</td>
+      <td>Applied (enterprise creative ops)</td>
+      <td><b>Win:</b> brand-governance machinery, not game intelligence; their casino work is brand-content adaptation, not per-title catalogue production. <b>Lose:</b> at Tier A groups, "we already have Storyteq" is a real objection at procurement level. Our counter is the record: they adapt what exists, we create per game from what the game is.</td>
+    </tr>
+    <tr>
+      <td><b>CHILI publish</b><br><span class="small">Cross-industry, API-first</span></td>
+      <td>Smart-template creative automation (CHILI GraFx): central control, local speed, print + digital, deep integrations. Carrefour, Airbus.</td>
+      <td>Applied (template engine) - substitute, not head-to-head</td>
+      <td><b>Win:</b> it is a tool an in-house studio buys to do the work themselves; we remove the work. <b>Lose:</b> against a "build it in-house with CHILI" decision at a big group with a large studio. That is really the build-vs-buy fight - see Threats.</td>
+    </tr>
+    <tr>
+      <td><b>Turtl</b><br><span class="small">B2B revenue content / ABM</span></td>
+      <td>Personalised B2B content experiences with intent analytics for ABM and pipeline. Cisco, Allianz, Nielsen.</td>
+      <td>None of our rungs directly</td>
+      <td><b>Query for the group:</b> Turtl looks like a tool for <em>our own</em> outbound (personalised content per target account) rather than a competitor. If someone put it on the list as a competitor, say why on Thursday; otherwise it moves to the GTM tooling list.</td>
+    </tr>
+  </table>
+
+  <h3>The three competitive fronts that actually matter</h3>
+  <p class="tight"><strong>1. The in-house studio.</strong> The silent number-one competitor on every rung is the operator's own team armed with a generic tool (Bannerflow, CHILI, Smartly). Our economics must beat "hire two designers and buy a template tool" at Tier B, and beat "our 15-person studio already does this" at Tier A. That comparison should be a one-pager.</p>
+  <p class="tight"><strong>2. The supplier marketing pack.</strong> The status quo is free. Every pitch is implicitly against "just use what Pragmatic sends us." Our answer - the pack is wrong, late, and unusable at catalogue scale - is strong, but it needs the accuracy/discrepancy data from section 02 to be undeniable.</p>
+  <p><strong>3. The platform bundlers.</strong> Optimove from the CRM side, VAIX/Sportradar from the data side, and the casino platforms themselves could each bundle a good-enough version of one rung. The defence is the same in every case: the combination and the observed record. Which is why priority one is finishing the moat.</p>
+
+  <div class="panel q">
+    <h4>Alignment check for the group</h4>
+    <ul>
+      <li><b>Win/loss memory:</b> who have we actually lost a deal to, ever? Name the deals. If the honest answer is "nobody, we lose to inaction," that changes the whole competitive section - inaction becomes competitor #0.</li>
+      <li><b>VAIX inside Hard Rock:</b> what exactly do they supply there, and does our Data/Personalisation line collide with it? Whoever owns the Hard Rock relationship should answer before we pitch DATA-cohort products into HRD.</li>
+      <li><b>Turtl:</b> competitor or tool? Resolve and move it.</li>
+    </ul>
+  </div>
+</section>
+<section id="s7">
+  <div class="eyebrow">07 · Discipline</div>
+  <h2>What we say no to <span class="tag agreed">Agreed in Strategy C</span></h2>
+  <div class="ownerline"><b>Owner:</b> whole group - this section only works if everyone enforces it on everyone</div>
+
+  <p><strong>No selling people's time.</strong> Services are a gated exception: strategic logo, staffed off the roadmap, premium priced. Hard Rock is grandfathered as the funding engine - named, bounded, not a precedent.</p>
+  <p><strong>No deep intelligence out the door - phase-split.</strong> In Phase 1, nothing leaves the estate except refined, shipped, protected products (the metadata feed is the first and currently only sanctioned example). At the Phase 2 gate, the tiered rules activate: outputs and shallow data yes, tools and deep data no; served intelligence returns answers through an API, never vectors, never weights; anything wide carries the airlock - watermarking, hashed embeddings, rate limits, licence teeth. Tuned weights, the raw embedding space and the engines never ship, in any phase. The per-product-line exposure table (section 03) is the working detail of this rule and is still unwritten - it is part of T4.</p>
+  <p><strong>No third motion.</strong> Two entry tracks are the maximum. Anything that does not fit the ladder does not ship - however good the opportunistic revenue looks. This is the rule that protects us from ourselves: Strategy C's own paper says it breaks exactly where we are weakest, fragmentation.</p>
+
+  <div class="panel q">
+    <h4>Alignment check for the group</h4>
+    <ul>
+      <li><b>Define the services gate in numbers.</b> "Strategic logo, premium priced" is a vibe until it has a floor: minimum contract value <span class="fill">FILL: £</span>, maximum concurrent services engagements <span class="fill">FILL: n</span>, and a named approver. Otherwise the next SkyCity-shaped opportunity walks straight through it.</li>
+      <li><b>Who can say no?</b> Refusal rules fail when nobody has the authority to enforce them against revenue. Nominate the person whose job it is to kill off-ladder deals.</li>
+    </ul>
+  </div>
+</section>
+
+<section id="s8">
+  <div class="eyebrow">08 · Honest mirror</div>
+  <h2>SWOT <span class="tag draft">Draft for validation</span></h2>
+  <div class="ownerline"><b>Owner:</b> Rahoul (draft) · whole group (truth) · <b>Rule:</b> every item must be falsifiable or quantified; no marketing allowed in here</div>
+
+  <div class="grid2">
+    <div class="swot s">
+      <h4>Strengths</h4>
+      <ul>
+        <li><b>The observed record.</b> 45,000+ games played, 555+ fields from play not paraphrase. Nobody researched in section 06 has this; most cannot get it without rebuilding our capture engine.</li>
+        <li><b>Casino-native, engineering-heavy.</b> 32 staff, 80% engineering, live with FanDuel, Hard Rock Digital, Flutter brands, Evolution, Betway, Hollywoodbets - logos most seed-stage competitors would kill for.</li>
+        <li><b>Proof with numbers.</b> +12% eGGR A/B tested, ~40% of launches via trailer placement, 62% cross-launch. We sell measured outcomes, not creative opinions.</li>
+        <li><b>Bootstrapped economics.</b> Hard Rock funds the build; no investor clock forcing a premature scale decision.</li>
+        <li><b>One engine, many products.</b> Every product line reads from the same record, so each new line is marginal cost, not a new company.</li>
+      </ul>
+    </div>
+    <div class="swot w">
+      <h4>Weaknesses</h4>
+      <ul>
+        <li><b>Revenue concentration.</b> Hard Rock is the funding engine. Concentration: <span class="fill">FILL: % of revenue</span>. Until that number is on a dashboard and falling, it is our biggest diligence red flag.</li>
+        <li><b>Perceived as a creative agency.</b> The group itself named this on 6 Aug. The rebrand exists to fix it; until it lands, we get benchmarked against agency day rates.</li>
+        <li><b>Packaging is unclear.</b> The ladder is unnamed, unpriced, not self-servable. Strategy C's stated failure mode - blurred layers - describes our present state, not a future risk.</li>
+        <li><b>Twenty-ish people, two live tracks plus a platform build.</b> Warm founder-led selling + cold automated outbound + delivery + Phase 2 readiness work, simultaneously. T3 automation is the designed answer, but until it ships, something is being starved - we should choose what, on purpose.</li>
+        <li><b>The infrastructure claim outruns reality.</b> Coverage of the active catalogue is <span class="fill">FILL: %</span>; the gap is exactly what priority one closes.</li>
+      </ul>
+    </div>
+    <div class="swot o">
+      <h4>Opportunities</h4>
+      <ul>
+        <li><b>Category creation.</b> "Content and intelligence infrastructure for online casino" has no incumbent owner. First credible claimant sets the vocabulary buyers use.</li>
+        <li><b>Optimove/CRM distribution.</b> Game DNA as the game-level feed inside the CRM stack every operator already runs - partner-shaped revenue on the Served rung.</li>
+        <li><b>Supplier side, later.</b> Suppliers switched on from strength: the same record sold upstream (launch packs, distribution intelligence) roughly doubles the TAM without a new engine.</li>
+        <li><b>Mobile gaming adjacency.</b> Sequenced after the iGaming beachhead converts. Sett's $57M validates the category; our observed-play approach ports.</li>
+        <li><b>Regulatory tailwind.</b> Compliance-grade, per-market creative and responsible-gaming metadata get more valuable as regulation tightens - and are hardest for generic platforms to fake.</li>
+      </ul>
+    </div>
+    <div class="swot t">
+      <h4>Threats</h4>
+      <ul>
+        <li><b>Build-vs-buy at Tier A.</b> Big groups with in-house studios plus a generic tool (Bannerflow/CHILI/Smartly) is the deal we lose without ever seeing a competitor's name.</li>
+        <li><b>Bundling from adjacent platforms.</b> Optimove creative generation, VAIX/Sportradar data products, or casino platforms shipping "good enough" tiles/metadata natively.</li>
+        <li><b>Well-funded entrants.</b> Sett ($57M) or similar pivoting into iGaming with agentic creative; Lobby Magic maturing upward from tiles.</li>
+        <li><b>Feed leakage.</b> If the Feed scales before the airlock exists, our cheapest product becomes our competitors' free data source. The phased model gates this by design - T4 before wide sale - so the residual threat is discipline: a tempting deal arriving before the protection stack does.</li>
+        <li><b>Supplier IP pushback.</b> Our record is built by playing suppliers' games and keeping what we find. One aggressive supplier legal letter is a scenario we should have a written position on before launch. Status: <span class="tag unknown">Unknown</span></li>
+        <li><b>Discipline failure.</b> Named by Strategy C itself: the two layers blur, the Feed gets oversold upward, outcomes get discounted downward, and we recreate the unclear packaging this strategy exists to kill.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section id="s9">
+  <div class="eyebrow">09 · Instruments</div>
+  <h2>Metrics &amp; instrumentation <span class="tag draft">Draft for validation</span></h2>
+  <div class="ownerline"><b>Owner:</b> James (HubSpot/data) · Rahoul (definitions)</div>
+
+  <p><strong>North-star metric: product revenue share</strong> - the percentage of revenue from productised, recurring deals versus services and one-offs. It is the single number that tracks the strategy (breaking concentration, earning Phase 2) and the exit multiple (section 10). The four trigger conditions from section 01 are first-class citizens of this dashboard: the gate opens on these numbers, not in a meeting.</p>
+
+  <table>
+    <tr><th>Metric</th><th>Why it matters</th><th>Current</th><th>Where it lives</th></tr>
+    <tr><td><b>Product revenue share</b></td><td>North star; decides the exit multiple</td><td><span class="fill">FILL: %</span></td><td><span class="fill">FILL: dashboard</span></td></tr>
+    <tr><td><b>Productised recurring contracts live</b> <span class="mono" style="color:var(--amber)">T1</span></td><td>Trigger condition; target ≥ <span class="fill">N</span></td><td><span class="fill">FILL: n</span></td><td>HubSpot</td></tr>
+    <tr><td><b>Hard Rock concentration</b> <span class="mono" style="color:var(--amber)">T1</span></td><td>Trigger condition; target &lt; <span class="fill">X %</span>; diligence red flag until falling</td><td><span class="fill">FILL: %</span></td><td>Monthly, leadership only</td></tr>
+    <tr><td><b>Readiness board completion</b> <span class="mono" style="color:var(--amber)">T2</span></td><td>Products refined, shipped, ready - % of Board A green</td><td><span class="fill">FILL: %</span></td><td>This wiki, section 03</td></tr>
+    <tr><td><b>Human-exception rate &amp; onboarding cost</b> <span class="mono" style="color:var(--amber)">T3</span></td><td>Can inbound scale without headcount? % of jobs needing a human touch; days &amp; hours per new client onboard</td><td><span class="fill">FILL</span></td><td>Ops</td></tr>
+    <tr><td><b>Protection stack build state</b> <span class="mono" style="color:var(--amber)">T4</span></td><td>Watermarking, hashed embeddings, rate limits, licence templates - built &amp; tested</td><td><span class="tag unknown">Unknown</span></td><td>Engineering</td></tr>
+    <tr><td><b>Active-catalogue coverage</b></td><td>The infrastructure claim, measured</td><td><span class="fill">FILL: %</span></td><td>Weekly, engine dashboard</td></tr>
+    <tr><td><b>Paying customers per rung</b></td><td>Breadth of the base; ladder health</td><td><span class="fill">FILL</span></td><td>HubSpot</td></tr>
+    <tr><td><b>CAC, conversion-by-stage, cycle length</b></td><td>Acquisition-quality pipeline data</td><td>Instrumented from day one via timestamped HubSpot stages</td><td>HubSpot</td></tr>
+    <tr><td><b>Case studies captured</b></td><td>Top-rung compounding; capture embedded in early contracts</td><td><span class="fill">FILL: n</span></td><td>Case Study Engine sheet</td></tr>
+  </table>
+
+  <div class="rule-note">Standing principle, already learned the hard way: <strong>instrument from day one, retrofitting is costly.</strong> Pipeline stages are timestamped from first contact; productised, recurring deal structures target the first ten contracts; vocabulary is governed by the canonical enum so the data never drifts. If a metric in this table cannot be filled within a week, that gap is itself a Thursday agenda item.</div>
+</section>
+
+<section id="s10">
+  <div class="eyebrow">10 · Endgame</div>
+  <h2>Exit thesis <span class="tag draft">Draft for validation</span></h2>
+  <div class="ownerline"><b>Owner:</b> founders · <b>Frame:</b> exit at a SaaS/infrastructure multiple shapes every choice above, from HubSpot timestamps to the ladder</div>
+
+  <p>The two-layer play keeps the widest acquirer set open - infrastructure players, suppliers, operators, affiliates, PE - because the mix contains something for each. The multiple is decided by the revenue mix at exit: the more the base layer and served intelligence dominate, the closer we trade to an infrastructure multiple; the more services dominate, the closer to an agency multiple. That is the entire reason the north star is product revenue share and not revenue.</p>
+
+  <table>
+    <tr><th>Acquirer type</th><th>What they'd be buying</th><th>Live comp / signal</th></tr>
+    <tr><td><b>Sports/gaming data infrastructure</b></td><td>The observed record + delivery pipes as a data asset</td><td><b>VAIX → Sportradar</b> is the direct precedent: an iGaming AI engine bought by a data infrastructure player. Our record is broader than player-behaviour data, which cuts both ways in a negotiation.</td></tr>
+    <tr><td><b>Martech / CRM platforms</b></td><td>Casino-native content + data layer to bolt onto orchestration</td><td>Optimove's move into creative generation shows the direction of travel</td></tr>
+    <tr><td><b>Suppliers / aggregators</b></td><td>Distribution intelligence and launch automation for their catalogue</td><td>Evolution relationship is the proof-of-interest channel</td></tr>
+    <tr><td><b>Operators</b></td><td>Exclusive capability (defensive buy)</td><td>Lowest multiple, highest concentration risk - the outcome we are instrumenting to avoid needing</td></tr>
+    <tr><td><b>PE</b></td><td>Recurring product revenue with clean cohort data</td><td>This buyer reads the HubSpot timestamps. Literally.</td></tr>
+  </table>
+
+  <div class="panel q">
+    <h4>Alignment check for the group</h4>
+    <ul>
+      <li><b>Target window and number.</b> Is there a shared view of when and at what range? <span class="fill">FILL: window, range</span>. Even a soft answer changes sequencing decisions (e.g. how hard to push the Feed in 2027).</li>
+      <li><b>Does anyone disagree that VAIX→Sportradar is our lead comp?</b> If yes, name the better one - it should shape who we get visible to over the next 18 months.</li>
+    </ul>
+  </div>
+</section>
+
+<section id="s11">
+  <div class="eyebrow">11 · The agenda</div>
+  <h2>Open questions register <span class="tag decision">This is the Thursday agenda</span></h2>
+  <div class="ownerline"><b>Owner:</b> Rahoul · <b>Rule:</b> a question leaves this register only by becoming an Agreed line in a section above</div>
+
+  <table>
+    <tr><th>#</th><th>Question</th><th>Section</th><th>Blocks</th><th>Proposed owner</th></tr>
+    <tr><td class="mono">Q1</td><td>Do we claim "infrastructure" externally now, or show first and claim later?</td><td>01</td><td>Website copy, positioning narrative</td><td>Andrew / Brendan</td></tr>
+    <tr><td class="mono">Q2</td><td>Ratify the trigger numbers: N productised contracts, X% concentration (T1) - the gate structure is set, the numbers are not</td><td>01</td><td>The Phase 2 gate; roadmap sequencing</td><td>Whole group</td></tr>
+    <tr><td class="mono">Q3</td><td>What % of the active catalogue is actually covered, and who dashboards it weekly?</td><td>02</td><td>The infrastructure claim; priority one</td><td>Joe</td></tr>
+    <tr><td class="mono">Q4</td><td>Ladder names: external products or internal architecture?</td><td>03</td><td>Pricing pages, all sales assets</td><td>Andrew / Rahoul</td></tr>
+    <tr><td class="mono">Q5</td><td>Per-product-line exposure table: outputs vs tools, written and signed off</td><td>03 / 07</td><td>Feed launch, Served API design</td><td>Joe / Rahoul</td></tr>
+    <tr><td class="mono">Q6</td><td>Feed price proposal</td><td>03</td><td>Ladder-as-product</td><td>Rahoul</td></tr>
+    <tr><td class="mono">Q7</td><td>Lead persona for the launch narrative: Head of Casino or CMO?</td><td>04</td><td>Website hero, case-study strategy</td><td>Whole group</td></tr>
+    <tr><td class="mono">Q8</td><td>Real delivery capacity for new outcome deals per quarter</td><td>05</td><td>Cold-track promises</td><td>Sarah / Joe</td></tr>
+    <tr><td class="mono">Q9</td><td>Win/loss history: who have we actually lost to, and why?</td><td>06</td><td>Competitive positioning honesty</td><td>Rahoul / founders</td></tr>
+    <tr><td class="mono">Q10</td><td>VAIX inside Hard Rock: what do they supply, where do we collide?</td><td>06</td><td>Pitching DATA cohort into HRD</td><td>HRD relationship owner</td></tr>
+    <tr><td class="mono">Q11</td><td>Turtl: competitor or our own GTM tool?</td><td>06</td><td>Competitor map hygiene</td><td>Whoever nominated it</td></tr>
+    <tr><td class="mono">Q12</td><td>Services gate in numbers: floor price, max concurrent, named approver</td><td>07</td><td>Fragmentation defence</td><td>Founders</td></tr>
+    <tr><td class="mono">Q13</td><td>Hard Rock revenue concentration % - on a dashboard, trending</td><td>08 / 09</td><td>Diligence readiness</td><td>James</td></tr>
+    <tr><td class="mono">Q14</td><td>Supplier IP position on observed gameplay - written legal stance before launch</td><td>08</td><td>Launch risk</td><td>Founders</td></tr>
+    <tr><td class="mono">Q15</td><td>Exit window and range - even a soft shared answer</td><td>10</td><td>2027 sequencing</td><td>Founders</td></tr>
+    <tr><td class="mono">Q16</td><td>Fill the readiness board: Board A (products, T2) and Board B (internal automation, T3), honestly, with gaps named</td><td>03</td><td>The whole practical objective of this document</td><td>Joe / Sarah / James</td></tr>
+    <tr><td class="mono">Q17</td><td>Who calls the trigger, and in what forum? (Proposed: any Thursday where all four conditions read green for a full quarter)</td><td>01</td><td>Phase 2 entry mechanics</td><td>Founders</td></tr>
+  </table>
+
+  <p class="small" style="margin-top:20px">Seventeen questions. Some resolve in five minutes, three or four are real arguments. The suggested cut for Thursday: <b>Q16 first</b> (the readiness board is the practical point of this document), then Q2 (trigger numbers), Q1/Q4/Q7 (they gate all copy), Q14 (it gates the launch). Q3 and Q13 become dashboard tasks. The rest can be taken async in the project.</p>
+
+  <div style="margin-top:44px;padding-top:24px;border-top:1px solid var(--line)">
+    <div class="eyebrow pink">Turbo Pickle · Business Wiki v1.1 · prepared 10 Aug 2026</div>
+    <p class="small">v1.1 changes: B and C reframed as two distinct phases with a defined four-condition transition trigger (T1–T4); readiness board added (products + internal automation); exposure rule phase-split; metadata feed recorded as the first sanctioned Phase 1 product; say/do rule added to GTM. Maintained in the pinned Claude project - propose the edit, the tag moves, a new version ships. Competitor research from primary sources, 10 Aug 2026; refresh quarterly or on any funding/M&amp;A event.</p>
+  </div>
+</section>
+
+</main>
+</div>
+</body>
+</html>

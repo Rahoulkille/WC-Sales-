@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Turbo Pickle · Messaging Hierarchy v1</title>
+<style>
+  :root {
+    --bg: #0C0E09;
+    --panel: #13160E;
+    --panel2: #181C11;
+    --ink: #F2EFE2;
+    --mut: #A6AC96;
+    --faint: #6E7462;
+    --green: #9BC53D;
+    --lime: #C6D92E;
+    --teal: #4FB8A8;
+    --amber: #E0B04B;
+    --line: rgba(242,239,226,0.14);
+    --line-soft: rgba(242,239,226,0.08);
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--bg); color: var(--ink); font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; -webkit-font-smoothing: antialiased; line-height: 1.55; }
+  .wrap { max-width: 800px; margin: 0 auto; padding: 56px 32px 80px; }
+  h1 { font-size: 38px; line-height: 1.1; margin: 0 0 14px; letter-spacing: -1px; font-weight: 800; }
+  h2 { font-size: 23px; margin: 52px 0 8px; letter-spacing: -0.4px; font-weight: 800; }
+  h3 { font-size: 16px; margin: 26px 0 6px; font-weight: 800; }
+  p { font-size: 15.5px; margin: 0 0 12px; }
+  .mutp { color: var(--mut); }
+  .standfirst { font-size: 18px; color: var(--mut); max-width: 620px; }
+  .logo { font-weight: 800; font-size: 17px; letter-spacing: -0.3px; margin-bottom: 34px; }
+  .logo em { font-style: normal; color: var(--green); }
+  .meta { font-size: 13px; color: var(--faint); margin-bottom: 8px; }
+
+  .say { border-left: 3px solid var(--green); padding: 4px 0 4px 18px; margin: 18px 0; }
+  .say p { font-size: 19px; font-weight: 700; line-height: 1.4; margin: 0 0 4px; }
+  .say small { font-size: 13px; color: var(--mut); }
+
+  .pair { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin: 16px 0; }
+  .pair .box { border: 1px solid var(--line); border-radius: 12px; padding: 16px 18px; background: var(--panel); }
+  .pair .box b { display: block; font-size: 13px; margin-bottom: 6px; }
+  .pair .box.no b { color: var(--amber); }
+  .pair .box.yes b { color: var(--green); }
+  .pair .box p { font-size: 14px; color: var(--mut); margin: 0; }
+  @media (max-width: 640px) { .pair { grid-template-columns: 1fr; } }
+
+  table.lines { width: 100%; border-collapse: collapse; margin: 12px 0 6px; }
+  table.lines td { font-size: 14px; padding: 11px 10px; border-bottom: 1px solid var(--line-soft); vertical-align: top; }
+  table.lines td.prod { font-weight: 700; white-space: nowrap; width: 150px; }
+  table.lines td.line b { display: block; margin-bottom: 2px; }
+  table.lines td.line span { color: var(--mut); font-size: 13.5px; }
+
+  .proof { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin: 18px 0 8px; }
+  .proof .n { border: 1px solid var(--line); border-radius: 12px; padding: 16px; background: var(--panel); text-align: left; }
+  .proof .n b { display: block; font-size: 24px; letter-spacing: -0.5px; color: var(--lime); }
+  .proof .n span { font-size: 12.5px; color: var(--mut); }
+  @media (max-width: 720px) { .proof { grid-template-columns: 1fr 1fr; } }
+
+  .qa { border: 1px solid var(--line); border-radius: 14px; background: var(--panel); padding: 4px 24px 8px; margin: 16px 0; }
+  .qa h3 { color: var(--ink); }
+  .qa h3 em { font-style: normal; color: var(--teal); }
+  .qa p.ans { color: var(--mut); font-size: 14.5px; }
+  .qa p.ans b { color: var(--ink); }
+
+  .parked { border: 1px solid rgba(224,176,75,0.4); border-radius: 14px; background: var(--panel2); padding: 18px 24px; margin: 22px 0; }
+  .parked h3 { margin-top: 4px; color: var(--amber); }
+  .parked li { font-size: 14px; color: var(--mut); margin-bottom: 6px; }
+
+  .note { font-size: 13px; color: var(--faint); margin-top: 40px; border-top: 1px solid var(--line-soft); padding-top: 16px; }
+  ul.plain { padding-left: 20px; margin: 0 0 12px; }
+  ul.plain li { font-size: 14.5px; margin-bottom: 7px; }
+  ul.plain li span { color: var(--mut); }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <div class="logo">turbo<em>pickle</em></div>
+  <p class="meta">A2 · Messaging hierarchy · v1 · September 2026</p>
+  <h1>How we talk about Turbo Pickle</h1>
+  <p class="standfirst">The sales language layer. Everything a deck, a demo, a website or a cold email says should trace back to a line on this page. Battle-tested lines are marked with where they've worked.</p>
+
+  <h2>1 · The headline story</h2>
+  <div class="say">
+    <p>Your suppliers gave you games. Not content.</p>
+    <small>The opener. Used in three decks (bet365, cardcrush, SkyCity). It names the problem every operator recognises.</small>
+  </div>
+  <div class="say">
+    <p>All the content your casino needs. On tap.</p>
+    <small>The promise. Playables, ad creative, video, tiles, banners, SEO pages and game data, in your brand, in minutes.</small>
+  </div>
+  <div class="say">
+    <p>We play every game, so everything we make matches reality.</p>
+    <small>The reason to believe. The machine plays, records and measures every game as it's released. Everything else is built from that.</small>
+  </div>
+  <p class="mutp">Problem, promise, proof. Every pitch is those three sentences in that order, then detail. "Everything an online casino needs to know about its games. Built once." stays available as the data-led variant when talking to CMS, CRM or SEO buyers.</p>
+
+  <h2>2 · The entry story: playables first</h2>
+  <p>Playables are the front door to Turbo Pickle. Not because they're the most bespoke thing we make, but because they're the clearest demonstration of the model: <b>the making is already done, you just add your brand.</b></p>
+  <div class="say">
+    <p>The top games, already playable. Add your brand, hit download.</p>
+    <small>The library grows every week with the games players are actually searching for. Upload your brand kit once: logo, colours, legal lines. Every playable comes out branded, network-ready, in minutes.</small>
+  </div>
+  <h3>The value words: speed, cost, ease</h3>
+  <ul class="plain">
+    <li><b>Speed.</b> <span>The top titles each week are in the platform when they launch, not weeks after your brief lands in someone's queue.</span></li>
+    <li><b>Cost.</b> <span>You're not paying a build fee per playable. The build happened once; access covers the library.</span></li>
+    <li><b>Ease.</b> <span>Brand kit in, playables out. No brief, no rounds of amends, no production calendar.</span></li>
+  </ul>
+  <div class="pair">
+    <div class="box no"><b>We don't say</b><p>"We build custom playables to your brief." That's the old, slow, expensive story, and it reopens the per-asset conversation.</p></div>
+    <div class="box yes"><b>We do say</b><p>"The library covers the games that matter. If a title you need isn't there yet, tell us, that's how the library grows."</p></div>
+  </div>
+
+  <h2>3 · Product one-liners</h2>
+  <table class="lines">
+    <tr><td class="prod">Playables</td><td class="line"><b>The top games, already playable, in your brand in minutes.</b><span>Every major network: Meta, TikTok, AppLovin, Unity, Mintegral.</span></td></tr>
+    <tr><td class="prod">Static creative</td><td class="line"><b>Describe what you need. The engine knows the game; your brand kit does the rest.</b><span>From the portal mock, keep as is.</span></td></tr>
+    <tr><td class="prod">Video</td><td class="line"><b>Brand a template once, feed it your release calendar.</b><span>Each template turns every featured game into a version. Templates times titles, not briefs times weeks.</span></td></tr>
+    <tr><td class="prod">SEO content</td><td class="line"><b>Written from real gameplay. Accurate at scale, not generic at scale.</b><span>Second line pitched to SkyCity, it's the keeper.</span></td></tr>
+    <tr><td class="prod">Tiles</td><td class="line"><b>Game launch to live lobby tile in seconds, not hours.</b><span>Backed by the LeoVegas quote: "tiles are where designers go to die." Use it, it's the only client-voiced problem we own.</span></td></tr>
+    <tr><td class="prod">Banners</td><td class="line"><b>Promo surfaces that build themselves, coloured from the game's own art.</b><span>"No brief. No queue. No lag." as the supporting triplet.</span></td></tr>
+    <tr><td class="prod">Lobby video</td><td class="line"><b>Looping, branded, CMS-ready the day the game lands.</b><span>Weakest set of existing lines; this is a new draft, improve freely.</span></td></tr>
+    <tr><td class="prod">Game info pages</td><td class="line"><b>Facts, features and how-to, poured into your CMS template.</b></td></tr>
+    <tr><td class="prod">Metadata / Game DNA</td><td class="line"><b>Played, not scraped.</b><span>Best three words we own. Support with: "555+ fields behind every game, one structured feed regardless of who built it." And the Aviator demo: not in the catalogue, closest crash games served instead, player stays.</span></td></tr>
+  </table>
+
+  <h2>4 · Proof points</h2>
+  <div class="proof">
+    <div class="n"><b>45,000+</b><span>games ingested, played and measured, and counting</span></div>
+    <div class="n"><b>555+</b><span>data points per game, observed, not copied off a game sheet</span></div>
+    <div class="n"><b>1,400+</b><span>studios connected, every game as it's released</span></div>
+    <div class="n"><b>48 hrs</b><span>from a game's release to its assets ready in your brand</span></div>
+  </div>
+  <ul class="plain">
+    <li><b>Method:</b> <span>"We start with supplier specs for what's verifiably true. Then we play every game to extract what specs don't contain." Defensible because it describes how, not results.</span></li>
+    <li><b>Roster:</b> <span>"The same engine produces creative at scale for a top-three US operator, a major US casino brand, and a leading live-casino supplier." Name FanDuel, Hard Rock and Evolution where relationships allow.</span></li>
+    <li><b>Trust:</b> <span>"Every client relationship has come through an existing relationship or a referral."</span></li>
+    <li><b>Cost of inaction:</b> <span>20–30 minutes per tile by hand, times every game, every size, every brand. Let the buyer do that multiplication themselves.</span></li>
+  </ul>
+
+  <h2>5 · Pricing language</h2>
+  <p>The frame: <b>access, not assets.</b> No published rate card. Three cost classes carry every conversation:</p>
+  <ul class="plain">
+    <li><b>One-off:</b> <span>getting you started. Backlog packs, design systems, kick-off work.</span></li>
+    <li><b>Recurring:</b> <span>keeping you current. Every new title, handled as it releases.</span></li>
+    <li><b>Licence:</b> <span>access to what's already built. The library, the data, the feed. This class grows as automation lands, and it's where pricing decouples from asset count.</span></li>
+  </ul>
+  <h3>When someone asks "what does it cost?"</h3>
+  <div class="say">
+    <p>Catalogue size, launch cadence and product priorities are what we price from, so your answers shape the numbers.</p>
+    <small>Held with SkyCity, accepted without friction. This is the standard first response.</small>
+  </div>
+  <h3>When someone anchors on unit count</h3>
+  <p class="mutp">Reframe from asset to output, the GOAT move: "That's not 3 videos, that's 3 templates fed with 20+ titles each, 120+ versions." The unit of value is what comes out of the machine, not what goes into the invoice.</p>
+  <h3>When someone resists a minimum commitment</h3>
+  <p class="mutp">Never justify a floor with our capacity planning, that's the agency talking. Under access, commitment buys price certainty and freshness: "the subscription means every new game is covered the day it lands, and your rate is fixed for the term."</p>
+
+  <h2>6 · Objection answers</h2>
+  <div class="qa">
+    <h3><em>"Is this real software, or people behind a curtain?"</em></h3>
+    <p class="ans"><b>"It's software, and it's more than software."</b> Behind the login is the biggest thing anyone has built around casino games: the machine that plays every game, the data that describes them, the AI and the creative systems that build from it, and the people who trained it all. Whether a given output came from code or a person is the least interesting fact about it. What matters is that you have access to all of it, and the result, the turnaround and the price don't change either way.</p>
+    <p class="ans">For the inverse fear (too automated): <b>"No black box without a door."</b> You approve the templates, every output is reviewable, nothing auto-publishes unless you say so.</p>
+  </div>
+  <div class="qa">
+    <h3><em>"What happens to my in-house team?"</em></h3>
+    <p class="ans"><b>"Automate the floor. Put humans on the ceiling."</b> Your designers focus on hero campaigns and brand work; the production line, every tile, every size, every game, is what we take off them. We're not asking anyone to fire anyone. The platform makes their team faster, which is the whole point of stopping selling against it.</p>
+  </div>
+  <div class="qa">
+    <h3><em>"We'll manage metadata ourselves."</em></h3>
+    <p class="ans">"The operators who said that loudest are often the ones who realised six months in the work hadn't been done. Keep your team on the top 100 titles you actually care about; we handle the long tail, which is most of the catalogue."</p>
+  </div>
+  <div class="qa">
+    <h3><em>"Integration will be a nightmare."</em></h3>
+    <p class="ans">"We can show value before we touch your stack. Your data stays yours; we prove the lift with you before you commit a penny or an engineer." JSON, CSV or XML, their call.</p>
+  </div>
+  <div class="qa">
+    <h3><em>"You're too small."</em></h3>
+    <p class="ans">Don't apologise for size. Lead with the roster, frame size as agility: the reason a game's assets exist in 48 hours is that there's no agency org chart between the machine and the output.</p>
+  </div>
+
+  <div class="parked">
+    <h3>Parked until evidenced</h3>
+    <ul>
+      <li>"250+ games a month, already running" — no visible source, capacity model doesn't obviously support it.</li>
+      <li>"98% guideline compliance" — no evidence trail found.</li>
+      <li>"50+ ad variations per game per month" — unevidenced.</li>
+      <li>"~£1m per brand per market uncaptured organic value" — no source.</li>
+      <li>Any delivered-results case study — every EVIDENCE SLOT is still empty. First priority once a client ships: fill one.</li>
+    </ul>
+  </div>
+
+  <p class="note">Sources: vision pre-read (Aug 2026), SkyCity decks and proposal, bet365 decks, ComeOn deck, Spine v4, Three Ways In, sales playbook. Numbers (45k+ games, 555+ fields, 1,400+ studios) confirmed Sep 2026 and will grow; sweep older decks that still carry 25k/125/400.</p>
+
+</div>
+</body>
+</html>
