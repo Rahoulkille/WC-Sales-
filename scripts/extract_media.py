@@ -94,7 +94,7 @@ def brand_img(mm):
 
 
 page = re.sub(URI, brand_img, page)
-# Fonts are self-hosted via src/fonts.js, so drop the Google Fonts links.
+# Fonts are self-hosted via src/styles/fonts.css (scripts/fetch_fonts.py), so drop the Google Fonts links.
 page = re.sub(r'<link [^>]*fonts\.(googleapis|gstatic)\.com[^>]*>\n', '', page)
 out('index.html', page)
 

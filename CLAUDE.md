@@ -36,7 +36,7 @@ Answers persist in localStorage `hbtp:profile:v2`. "Start the preview over" in t
 Repo layout (Phase 0):
 
 - `index.html`: markup. `<!--hb:style base-->` and `<!--hb:style hb-polish-->` are replaced at build time by `vite/hbStyles.js` with `src/styles/base.css` and `src/styles/hb-polish.css`, so `<style id="hb-polish">` survives into every build.
-- `src/main.js`: entry. Loads `fonts.js` (self-hosted Google Fonts), then `app/lobby.js` (the main app, one module), then `design/explore-desktop.js`.
+- `src/main.js`: entry. Loads `styles/fonts.css` (the checkpoint's exact Google Fonts files, self-hosted by `scripts/fetch_fonts.py`), then `app/lobby.js` (the main app, one module), then `design/explore-desktop.js`.
 - `src/media.js`: builds `MEDIA` (`{key: url}`) from `assets/media/<key>.<ext>`. `assets/brand/` holds the TP logo and mascot.
 - `src/data/data.json`: `DATA`.
 - `scripts/extract_media.py`: regenerates all of the above from the checkpoint (overwrites hand edits).
