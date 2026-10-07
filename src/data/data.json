@@ -1,0 +1,1965 @@
+{
+ "games": [
+  {
+   "n": "10000 Wonders Big Bang",
+   "s": "ReelPlay",
+   "v": "High",
+   "m": 4896,
+   "t": [
+    "Arabian",
+    "Fantasy",
+    "India",
+    "Treasure"
+   ],
+   "f": [
+    "Cascades",
+    "Cash on reels",
+    "Hold and win",
+    "Jackpots",
+    "Pick bonus",
+    "Respins"
+   ],
+   "c": "#312127"
+  },
+  {
+   "n": "10001 Nights Megaways",
+   "s": "Red Tiger",
+   "v": "High",
+   "m": 10500,
+   "t": [
+    "Arabian",
+    "Fantasy",
+    "Genie",
+    "Magic",
+    "Treasure"
+   ],
+   "f": [
+    "Cascades",
+    "Climbing multiplier",
+    "Expanding wilds",
+    "Free spins",
+    "Megaways",
+    "Multiplier wilds",
+    "Random wilds"
+   ],
+   "c": "#391c58"
+  },
+  {
+   "n": "3 Wonders Santa on the beach",
+   "s": "Boomerang Studios",
+   "v": "Low",
+   "m": 1000,
+   "t": [
+    "Beach",
+    "Christmas",
+    "Holiday"
+   ],
+   "f": [
+    "Cash on reels",
+    "Free spins"
+   ],
+   "c": "#dbedeb"
+  },
+  {
+   "n": "4Squad",
+   "s": "Red Tiger",
+   "v": "Medium-high",
+   "m": 1250,
+   "t": [
+    "Cartoon",
+    "Futuristic",
+    "Hero",
+    "Urban"
+   ],
+   "f": [
+    "Cascades",
+    "Cluster pays",
+    "Free spins",
+    "Multipliers",
+    "Random wilds",
+    "Symbol transforms"
+   ],
+   "c": "#1f2539"
+  },
+  {
+   "n": "777 Strike",
+   "s": "Red Tiger",
+   "v": "Medium-high",
+   "m": 2830,
+   "t": [
+    "Coins",
+    "Gold"
+   ],
+   "f": [
+    "Bonus choice",
+    "Free spins",
+    "Guaranteed feature",
+    "Sticky wilds"
+   ],
+   "c": "#102712"
+  },
+  {
+   "n": "Alien Invaders",
+   "s": "Pragmatic Play",
+   "v": "Very high",
+   "m": 5000,
+   "t": [
+    "Alien",
+    "Arcade",
+    "Futuristic",
+    "Space"
+   ],
+   "f": [
+    "Ante bet",
+    "Bonus buy",
+    "Cascades",
+    "Climbing multiplier",
+    "Expanding reels",
+    "Free spins",
+    "Multiplier wilds"
+   ],
+   "c": "#3617a8"
+  },
+  {
+   "n": "Amazing Catch",
+   "s": "Just For The Win",
+   "v": "High",
+   "m": 5000,
+   "t": [
+    "Adventure",
+    "Animals",
+    "Fishing",
+    "Money",
+    "Nature",
+    "Ocean",
+    "Summer"
+   ],
+   "f": [
+    "Cash collect",
+    "Cash on reels",
+    "Climbing multiplier",
+    "Free spins",
+    "Jackpots",
+    "Ways to win",
+    "Wheel bonus"
+   ],
+   "c": "#d8ead4"
+  },
+  {
+   "n": "Anubis II DoubleMax",
+   "s": "Reflex Gaming",
+   "v": "High",
+   "m": 5000,
+   "t": [
+    "Adventure",
+    "Ancient",
+    "Egypt",
+    "Gold",
+    "Mystery",
+    "Mythical"
+   ],
+   "f": [
+    "Ante bet",
+    "Bonus buy",
+    "Bonus choice",
+    "Cascades",
+    "Climbing multiplier",
+    "Expanding wilds",
+    "Random wilds",
+    "Win both ways"
+   ],
+   "c": "#252227"
+  },
+  {
+   "n": "Archdragon King",
+   "s": "Red Tiger",
+   "v": "High",
+   "m": 20000,
+   "t": [
+    "Dragon",
+    "Fantasy",
+    "Gold",
+    "Royal",
+    "Winter"
+   ],
+   "f": [
+    "Bonus buy",
+    "Bonus choice",
+    "Climbing multiplier",
+    "Colossal symbols",
+    "Dynamic ways",
+    "Expanding wilds",
+    "Free spins",
+    "Multiplier wilds",
+    "Sticky wilds"
+   ],
+   "c": "#221c17"
+  },
+  {
+   "n": "Avalon Gold",
+   "s": "ELK Studios",
+   "v": "Medium-high",
+   "m": 25000,
+   "t": [
+    "Fantasy",
+    "Gold",
+    "Medieval"
+   ],
+   "f": [
+    "Ante bet",
+    "Bonus choice",
+    "Cascades",
+    "Colossal symbols",
+    "Dynamic ways",
+    "Expanding wilds",
+    "Free spins",
+    "Multipliers",
+    "Mystery symbols",
+    "Respins"
+   ],
+   "c": "#34554f"
+  },
+  {
+   "n": "Big Bang Boom",
+   "s": "NetEnt",
+   "v": "High",
+   "m": 4300,
+   "t": [
+    "Arcade",
+    "Fire",
+    "Graffiti",
+    "Urban"
+   ],
+   "f": [
+    "Bonus buy",
+    "Dynamic ways",
+    "Expanding reels",
+    "Free spins",
+    "Symbol removal",
+    "Ways to win"
+   ],
+   "c": "#255ec4"
+  },
+  {
+   "n": "Big Size Fishin'",
+   "s": "Red Rake Gaming",
+   "v": "Medium-high",
+   "m": 706,
+   "t": [
+    "Animals",
+    "Fishing",
+    "Ocean",
+    "Summer"
+   ],
+   "f": [
+    "Cash collect",
+    "Climbing multiplier",
+    "Free spins",
+    "Multiplier wilds"
+   ],
+   "c": "#52412e"
+  },
+  {
+   "n": "Bonza Bucks: Hold and Win Extreme 10,000",
+   "s": "Booming Games",
+   "v": "Medium-high",
+   "m": 12000,
+   "t": [
+    "Animals",
+    "Australian",
+    "Money",
+    "Nature"
+   ],
+   "f": [
+    "Bonus buy",
+    "Cash on reels",
+    "Hold and win",
+    "Jackpots",
+    "Multipliers",
+    "Random bonus",
+    "Wheel bonus"
+   ],
+   "c": "#7d210b"
+  },
+  {
+   "n": "Brute Force",
+   "s": "Nolimit City",
+   "v": "Very high",
+   "m": 40000,
+   "t": [
+    "Alien",
+    "Futuristic",
+    "Hero"
+   ],
+   "f": [
+    "Bonus buy",
+    "Free spins",
+    "Guaranteed feature",
+    "Multiplier wilds",
+    "Nudges",
+    "Stacked symbols",
+    "Sticky wilds"
+   ],
+   "c": "#1a0c0e"
+  },
+  {
+   "n": "Bubble Up!",
+   "s": "Pragmatic Play",
+   "v": "High",
+   "m": 10000,
+   "t": [
+    "Animals",
+    "Cartoon",
+    "Ocean",
+    "Treasure"
+   ],
+   "f": [
+    "Ante bet",
+    "Cash on reels",
+    "Free spins",
+    "Multipliers",
+    "Pick bonus",
+    "Progress meter"
+   ],
+   "c": "#2f9fdb"
+  },
+  {
+   "n": "Buffalo Hold and Win Extreme 10,000",
+   "s": "Booming Games",
+   "v": "Medium-high",
+   "m": 12000,
+   "t": [
+    "Animals",
+    "Buffalo",
+    "Wild West"
+   ],
+   "f": [
+    "Cash on reels",
+    "Expanding reels",
+    "Hold and win",
+    "Jackpots",
+    "Random bonus",
+    "Wheel bonus"
+   ],
+   "c": "#48a7e8"
+  },
+  {
+   "n": "Burning Classics",
+   "s": "Booming Games",
+   "v": "Medium",
+   "m": 2000,
+   "t": [],
+   "f": [
+    "Free spins",
+    "Gamble",
+    "Mystery symbols",
+    "Scatter pays",
+    "Stacked symbols"
+   ],
+   "c": "#2d0403"
+  },
+  {
+   "n": "Burning Classics Go Wild",
+   "s": "Booming Games",
+   "v": "High",
+   "m": 1000,
+   "t": [],
+   "f": [
+    "Free spins"
+   ],
+   "c": "#1b0201"
+  },
+  {
+   "n": "Cash Volt",
+   "s": "Red Tiger",
+   "v": "Medium-high",
+   "m": 2500,
+   "t": [
+    "Bell",
+    "Electricity",
+    "Money",
+    "Retro"
+   ],
+   "f": [
+    "Cash on reels",
+    "Colossal symbols",
+    "Paylines",
+    "Scatter pays"
+   ],
+   "c": "#1d1651"
+  },
+  {
+   "n": "Cash Volt Tap-A-Roo",
+   "s": "Red Tiger",
+   "v": "High",
+   "m": 2500,
+   "t": [
+    "Retro"
+   ],
+   "f": [
+    "Bonus choice",
+    "Colossal symbols",
+    "Lucky tap",
+    "Multiplier trail",
+    "Paylines",
+    "Random bonus"
+   ],
+   "c": "#0d4e92"
+  },
+  {
+   "n": "Crabby's Gold",
+   "s": "Play'n GO",
+   "v": "Medium-high",
+   "m": 11520,
+   "t": [
+    "Ocean",
+    "Pirates",
+    "Treasure"
+   ],
+   "f": [
+    "Cash collect",
+    "Cash on reels",
+    "Colossal symbols",
+    "Expanding wilds",
+    "Free spins",
+    "Hold and win",
+    "Multiplier wilds",
+    "Sticky wilds",
+    "Walking wilds"
+   ],
+   "c": "#384445"
+  },
+  {
+   "n": "Crab Trap",
+   "s": "NetEnt",
+   "v": "Medium",
+   "m": 1191,
+   "t": [
+    "Adventure",
+    "Animals",
+    "Beach",
+    "Ocean",
+    "Summer"
+   ],
+   "f": [
+    "Bonus buy",
+    "Cash on reels",
+    "Free spins",
+    "Respins",
+    "Scatter pays"
+   ],
+   "c": "#13a8ba"
+  },
+  {
+   "n": "Diamond Blitz",
+   "s": "Red Tiger",
+   "v": "Very high",
+   "m": 4055,
+   "t": [
+    "Arcade",
+    "Fruit",
+    "Futuristic",
+    "Luxury",
+    "Retro"
+   ],
+   "f": [
+    "Bonus buy",
+    "Free spins",
+    "Respins",
+    "Sticky wilds",
+    "Walking wilds",
+    "Ways to win"
+   ],
+   "c": "#525299"
+  },
+  {
+   "n": "Diamond Rise",
+   "s": "Playtech",
+   "v": "Medium-high",
+   "m": 1170,
+   "t": [
+    "Arcade",
+    "Jewels",
+    "Neon"
+   ],
+   "f": [
+    "Free spins"
+   ],
+   "c": "#24125b"
+  },
+  {
+   "n": "Dolphin's Pearl deluxe",
+   "s": "Novomatic",
+   "v": "Medium-high",
+   "m": 9000,
+   "t": [
+    "Animals",
+    "Nature",
+    "Ocean",
+    "Treasure"
+   ],
+   "f": [
+    "Climbing multiplier",
+    "Free spins",
+    "Multiplier wilds",
+    "Paylines",
+    "Scatter pays"
+   ],
+   "c": "#112556"
+  },
+  {
+   "n": "Donut Division",
+   "s": "Hacksaw Gaming",
+   "v": "Medium",
+   "m": 12500,
+   "t": [
+    "Candy",
+    "Food"
+   ],
+   "f": [
+    "Bonus buy",
+    "Bonus choice",
+    "Climbing multiplier",
+    "Free spins",
+    "Multiplier wilds",
+    "Respins",
+    "Spreading wilds"
+   ],
+   "c": "#83693b"
+  },
+  {
+   "n": "Dragon Kingdom - Eyes of Fire",
+   "s": "Pragmatic Play",
+   "v": "Low",
+   "m": 1250,
+   "t": [
+    "Dragon",
+    "Fantasy",
+    "Royal"
+   ],
+   "f": [
+    "Bonus choice",
+    "Free spins",
+    "Multipliers",
+    "Scatter pays",
+    "Stacked symbols"
+   ],
+   "c": "#1b5e95"
+  },
+  {
+   "n": "Dragon Ladies",
+   "s": "Ruby Play",
+   "v": "Medium",
+   "m": 8333,
+   "t": [
+    "Asian",
+    "Dragon"
+   ],
+   "f": [
+    "Hold and win",
+    "Respins",
+    "Symbol transforms"
+   ],
+   "c": "#090409"
+  },
+  {
+   "n": "Duck Hunters Happy Hour",
+   "s": "Nolimit City",
+   "v": "Very high",
+   "m": 33333,
+   "t": [
+    "American",
+    "Animals",
+    "Hunting",
+    "Party",
+    "Weapons"
+   ],
+   "f": [
+    "Ante bet",
+    "Bonus buy",
+    "Cascades",
+    "Climbing multiplier",
+    "Free spins",
+    "Mystery symbols",
+    "Symbol upgrades"
+   ],
+   "c": "#512a0f"
+  },
+  {
+   "n": "Fire Blaze: Fire Fighter",
+   "s": "Rare Stone",
+   "v": "High",
+   "m": 2214,
+   "t": [
+    "Fire",
+    "Hero",
+    "Urban"
+   ],
+   "f": [
+    "Free spins",
+    "Hold and win",
+    "Jackpots",
+    "Mystery symbols",
+    "Respins"
+   ],
+   "c": "#491614"
+  },
+  {
+   "n": "Flaming Chillies",
+   "s": "Booming Games",
+   "v": "High",
+   "m": 2000,
+   "t": [
+    "Bell",
+    "Fire",
+    "Food",
+    "Retro"
+   ],
+   "f": [
+    "Free spins",
+    "Paylines",
+    "Scatter pays"
+   ],
+   "c": "#522410"
+  },
+  {
+   "n": "Fortuna De Los Muertos 4",
+   "s": "Spinomenal",
+   "v": "Medium-high",
+   "m": 3000,
+   "t": [
+    "Day of the Dead",
+    "Mexican",
+    "Party"
+   ],
+   "f": [
+    "Free spins",
+    "Stacked symbols"
+   ],
+   "c": ""
+  },
+  {
+   "n": "Fortune of Olympus",
+   "s": "Pragmatic Play",
+   "v": "Very high",
+   "m": 10000,
+   "t": [
+    "Gold",
+    "Greek",
+    "Mythical"
+   ],
+   "f": [
+    "Bonus buy",
+    "Cascades",
+    "Cluster pays",
+    "Free spins",
+    "Multipliers"
+   ],
+   "c": "#9b584a"
+  },
+  {
+   "n": "Fruits'n Jars",
+   "s": "Red Rake Gaming",
+   "v": "Medium",
+   "m": 10695,
+   "t": [
+    "Bell",
+    "Fruit",
+    "Jewels"
+   ],
+   "f": [
+    "Free spins",
+    "Jackpots",
+    "Multiplier wilds",
+    "Mystery symbols",
+    "Wheel bonus"
+   ],
+   "c": "#121c2b"
+  },
+  {
+   "n": "Fury of Anubis",
+   "s": "Pragmatic Play",
+   "v": "High",
+   "m": 10000,
+   "t": [
+    "Ancient",
+    "Egypt",
+    "Gold",
+    "Mythical"
+   ],
+   "f": [
+    "Ante bet",
+    "Cascades",
+    "Climbing multiplier",
+    "Free spins",
+    "Gamble",
+    "Scatter pays"
+   ],
+   "c": "#4f3722"
+  },
+  {
+   "n": "Game of Thrones",
+   "s": "Blueprint Gaming",
+   "v": "Medium-high",
+   "m": 10000,
+   "t": [
+    "Branded",
+    "Medieval",
+    "TV show"
+   ],
+   "f": [
+    "Scatter pays",
+    "Ways to win"
+   ],
+   "c": ""
+  },
+  {
+   "n": "Gates of Olympus 2500",
+   "s": "Pragmatic Play",
+   "v": "High",
+   "m": 25000,
+   "t": [
+    "Ancient",
+    "Greek",
+    "Mythical"
+   ],
+   "f": [
+    "Ante bet",
+    "Bonus buy",
+    "Bonus choice",
+    "Cascades",
+    "Climbing multiplier",
+    "Free spins",
+    "Multipliers",
+    "Wheel bonus"
+   ],
+   "c": "#c3623b"
+  },
+  {
+   "n": "Golden Temple",
+   "s": "Red Tiger",
+   "v": "Medium",
+   "m": 10000,
+   "t": [
+    "Adventure",
+    "Aztec",
+    "Gold",
+    "Jungle",
+    "Treasure"
+   ],
+   "f": [
+    "Cash on reels",
+    "Free spins",
+    "Gamble",
+    "Multiplier trail",
+    "Nudges",
+    "Pick bonus",
+    "Random wilds",
+    "Respins"
+   ],
+   "c": "#3d6714"
+  },
+  {
+   "n": "Gonzo's Quest Megaways",
+   "s": "Red Tiger",
+   "v": "Medium-high",
+   "m": 20000,
+   "t": [
+    "Adventure",
+    "Aztec",
+    "Jungle"
+   ],
+   "f": [
+    "Cascades",
+    "Climbing multiplier",
+    "Free spins",
+    "Megaways",
+    "Sticky wilds",
+    "Symbol removal"
+   ],
+   "c": "#2a2111"
+  },
+  {
+   "n": "Grand Express Diamond Class",
+   "s": "Ruby Play",
+   "v": "Medium",
+   "m": 2500,
+   "t": [],
+   "f": [
+    "Cash on reels",
+    "Free spins",
+    "Hold and win",
+    "Jackpots",
+    "Multiplier wilds",
+    "Respins"
+   ],
+   "c": "#d5b936"
+  },
+  {
+   "n": "Great Ghosts!",
+   "s": "Pragmatic Play",
+   "v": "Very high",
+   "m": 40000,
+   "t": [
+    "Cartoon",
+    "Fantasy",
+    "Halloween",
+    "Horror",
+    "Mystery"
+   ],
+   "f": [
+    "Ante bet",
+    "Cash on reels",
+    "Expanding reels",
+    "Mystery symbols",
+    "Random bonus",
+    "Respins",
+    "Symbol upgrades"
+   ],
+   "c": "#1a272e"
+  },
+  {
+   "n": "Hell Butcher",
+   "s": "Pragmatic Play",
+   "v": "Medium",
+   "m": 20000,
+   "t": [
+    "Devil",
+    "Hell",
+    "Horror"
+   ],
+   "f": [
+    "Ante bet",
+    "Cascades",
+    "Climbing multiplier",
+    "Cluster pays",
+    "Free spins",
+    "Multiplier wilds"
+   ],
+   "c": "#b72611"
+  },
+  {
+   "n": "Heroic Spins",
+   "s": "Pragmatic Play",
+   "v": "Very high",
+   "m": 10000,
+   "t": [
+    "Adventure",
+    "Ancient",
+    "Dragon",
+    "Fantasy",
+    "Greek",
+    "Hero"
+   ],
+   "f": [
+    "Expanding wilds",
+    "Free spins",
+    "Multiplier wilds",
+    "Wheel bonus"
+   ],
+   "c": "#210a11"
+  },
+  {
+   "n": "Holly Jolly Bonanza 2",
+   "s": "Booming Games",
+   "v": "High",
+   "m": 6500,
+   "t": [
+    "Christmas",
+    "Holiday"
+   ],
+   "f": [
+    "Bonus buy",
+    "Cascades",
+    "Free spins",
+    "Multipliers",
+    "Mystery symbols",
+    "Symbol transforms"
+   ],
+   "c": "#193c6c"
+  },
+  {
+   "n": "Holly Jolly Cash Pig",
+   "s": "Booming Games",
+   "v": "High",
+   "m": 6000,
+   "t": [
+    "Christmas",
+    "Holiday",
+    "Luxury",
+    "Money",
+    "Pig"
+   ],
+   "f": [
+    "Cascades",
+    "Free spins",
+    "Symbol upgrades"
+   ],
+   "c": "#295e94"
+  },
+  {
+   "n": "Honey Rush",
+   "s": "Play'n GO",
+   "v": "Very high",
+   "m": 9000,
+   "t": [
+    "Animals",
+    "Food",
+    "Nature"
+   ],
+   "f": [
+    "Cascades",
+    "Free spins",
+    "Multiplier wilds",
+    "Random bonus",
+    "Sticky wilds"
+   ],
+   "c": "#f88d05"
+  },
+  {
+   "n": "Hula Balua",
+   "s": "ELK Studios",
+   "v": "Medium-high",
+   "m": 25000,
+   "t": [
+    "Fruit",
+    "Hawaiian",
+    "Jungle",
+    "Tiki"
+   ],
+   "f": [
+    "Ante bet",
+    "Bonus buy",
+    "Colossal symbols",
+    "Free spins",
+    "Random wilds",
+    "Respins",
+    "Walking wilds"
+   ],
+   "c": "#254421"
+  },
+  {
+   "n": "Ice Wolf",
+   "s": "ELK Studios",
+   "v": "High",
+   "m": 2500,
+   "t": [
+    "Mythical"
+   ],
+   "f": [
+    "Dynamic ways",
+    "Expanding reels",
+    "Free spins",
+    "Multiplier wilds",
+    "Respins",
+    "Sticky wilds"
+   ],
+   "c": "#5a95c4"
+  },
+  {
+   "n": "Jackpot Train",
+   "s": "Red Tiger",
+   "v": "High",
+   "m": 12000,
+   "t": [
+    "Gold",
+    "Luxury"
+   ],
+   "f": [
+    "Bonus choice",
+    "Cash on reels",
+    "Free spins",
+    "Jackpots",
+    "Random bonus",
+    "Symbol upgrades",
+    "Wheel bonus"
+   ],
+   "c": "#291350"
+  },
+  {
+   "n": "Jester Spins",
+   "s": "Red Tiger",
+   "v": "Medium-high",
+   "m": 1900,
+   "t": [
+    "Arcade",
+    "Fruit"
+   ],
+   "f": [
+    "Free spins",
+    "Paylines"
+   ],
+   "c": "#1c124a"
+  },
+  {
+   "n": "Juicy Fruits Multihold",
+   "s": "Pragmatic Play",
+   "v": "High",
+   "m": 8000,
+   "t": [
+    "Arcade",
+    "Candy",
+    "Fruit",
+    "Retro"
+   ],
+   "f": [
+    "Colossal symbols",
+    "Expanding reels",
+    "Free spins",
+    "Walking wilds"
+   ],
+   "c": "#4d0f0b"
+  },
+  {
+   "n": "Kodiak Kingdom",
+   "s": "Microgaming",
+   "v": "Very high",
+   "m": 26812,
+   "t": [
+    "Forest"
+   ],
+   "f": [
+    "Bonus buy",
+    "Climbing multiplier",
+    "Free spins",
+    "Multiplier wilds",
+    "Ways to win"
+   ],
+   "c": "#5b2513"
+  },
+  {
+   "n": "Laser Fruit",
+   "s": "Red Tiger",
+   "v": "Medium-high",
+   "m": 10000,
+   "t": [
+    "Fruit",
+    "Neon",
+    "Retro"
+   ],
+   "f": [
+    "Dynamic ways",
+    "Expanding reels",
+    "Free spins",
+    "Wheel bonus"
+   ],
+   "c": "#121020"
+  },
+  {
+   "n": "Le Fisherman",
+   "s": "Hacksaw Gaming",
+   "v": "Medium",
+   "m": 30000,
+   "t": [
+    "Treasure"
+   ],
+   "f": [
+    "Cascades",
+    "Cash collect",
+    "Cash on reels",
+    "Free spins",
+    "Multipliers",
+    "Symbol transforms"
+   ],
+   "c": "#d5e6ce"
+  },
+  {
+   "n": "Magic Journey",
+   "s": "Pragmatic Play",
+   "v": "High",
+   "m": 40000,
+   "t": [
+    "Mythical",
+    "Pig"
+   ],
+   "f": [
+    "Free spins",
+    "Respins"
+   ],
+   "c": "#bf6129"
+  },
+  {
+   "n": "Mega Fire Blaze: Big Circus!",
+   "s": "Rare Stone",
+   "v": "Medium",
+   "m": 2571,
+   "t": [
+    "Circus",
+    "Fire",
+    "Party"
+   ],
+   "f": [
+    "Cash collect",
+    "Cash on reels",
+    "Expanding reels",
+    "Free spins",
+    "Hold and win",
+    "Multiplier wilds",
+    "Respins"
+   ],
+   "c": ""
+  },
+  {
+   "n": "Mermaid's Treasure Trove",
+   "s": "Pragmatic Play",
+   "v": "Very high",
+   "m": 10000,
+   "t": [
+    "Fantasy",
+    "Mermaid",
+    "Ocean",
+    "Treasure"
+   ],
+   "f": [
+    "Ante bet",
+    "Bonus buy",
+    "Cascades",
+    "Climbing multiplier",
+    "Cluster pays",
+    "Free spins",
+    "Multiplier wilds",
+    "Sticky wilds"
+   ],
+   "c": "#19739a"
+  },
+  {
+   "n": "Mermaid's Win & Spin",
+   "s": "Inspired",
+   "v": "Medium",
+   "m": 1000,
+   "t": [
+    "Mermaid",
+    "Ocean",
+    "Treasure"
+   ],
+   "f": [
+    "Bonus choice",
+    "Colossal symbols",
+    "Expanding wilds",
+    "Free spins",
+    "Gamble"
+   ],
+   "c": "#094f8f"
+  },
+  {
+   "n": "Nitropolis",
+   "s": "ELK Studios",
+   "v": "High",
+   "m": 10000,
+   "t": [
+    "Animals",
+    "Beach",
+    "Cars",
+    "Cat",
+    "Dog",
+    "Futuristic",
+    "Pig",
+    "Urban"
+   ],
+   "f": [
+    "Colossal symbols",
+    "Dynamic ways",
+    "Free spins",
+    "Respins",
+    "Symbol transforms",
+    "Symbol upgrades"
+   ],
+   "c": "#0d1f16"
+  },
+  {
+   "n": "Oink Oink Oink",
+   "s": "Rare Stone",
+   "v": "High",
+   "m": 2030,
+   "t": [
+    "Coins",
+    "Gold",
+    "Pig"
+   ],
+   "f": [
+    "Expanding reels",
+    "Free spins",
+    "Jackpots",
+    "Pick bonus",
+    "Wheel bonus"
+   ],
+   "c": "#24074a"
+  },
+  {
+   "n": "Over The Moon",
+   "s": "Big Time Gaming",
+   "v": "High",
+   "m": 13570,
+   "t": [
+    "Futuristic",
+    "Space"
+   ],
+   "f": [
+    "Bonus buy",
+    "Bonus choice",
+    "Cash collect",
+    "Cash on reels",
+    "Climbing multiplier",
+    "Free spins",
+    "Megaways",
+    "Wheel bonus"
+   ],
+   "c": "#2c2363"
+  },
+  {
+   "n": "Pearl Harbor",
+   "s": "Nolimit City",
+   "v": "Very high",
+   "m": 41127,
+   "t": [
+    "Adventure",
+    "American",
+    "Asian",
+    "Japanese",
+    "Military",
+    "War"
+   ],
+   "f": [
+    "Ante bet",
+    "Bonus buy",
+    "Cascades",
+    "Climbing multiplier",
+    "Cluster pays",
+    "Colossal symbols",
+    "Free spins",
+    "Multiplier wilds",
+    "Spreading wilds"
+   ],
+   "c": "#5b1f12"
+  },
+  {
+   "n": "Penguins Christmas Party Time",
+   "s": "Pragmatic Play",
+   "v": "Very high",
+   "m": 2000,
+   "t": [
+    "Animals",
+    "Christmas",
+    "Holiday",
+    "Party"
+   ],
+   "f": [
+    "Ante bet",
+    "Bonus choice",
+    "Free spins",
+    "Multiplier wilds",
+    "Pick bonus",
+    "Wheel bonus"
+   ],
+   "c": "#4b2a1f"
+  },
+  {
+   "n": "Piggy Blitz Disco Gold",
+   "s": "Play'n GO",
+   "v": "Medium",
+   "m": 6000,
+   "t": [
+    "Disco",
+    "Gold",
+    "Pig"
+   ],
+   "f": [
+    "Bonus choice",
+    "Cash collect",
+    "Cash on reels",
+    "Free spins",
+    "Jackpots",
+    "Respins",
+    "Ways to win"
+   ],
+   "c": "#64479e"
+  },
+  {
+   "n": "Piggy Mania",
+   "s": "Origins",
+   "v": "High",
+   "m": 2500,
+   "t": [
+    "Asian",
+    "Money",
+    "Pig"
+   ],
+   "f": [
+    "Free spins",
+    "Hold and win",
+    "Random bonus",
+    "Respins"
+   ],
+   "c": ""
+  },
+  {
+   "n": "Pirots 2",
+   "s": "ELK Studios",
+   "v": "Medium-high",
+   "m": 10000,
+   "t": [
+    "Animals",
+    "Pirates",
+    "Treasure"
+   ],
+   "f": [
+    "Cash collect",
+    "Cash on reels",
+    "Expanding reels",
+    "Free spins",
+    "Symbol removal",
+    "Symbol transforms",
+    "Symbol upgrades"
+   ],
+   "c": "#1e211b"
+  },
+  {
+   "n": "Pirots 3",
+   "s": "ELK Studios",
+   "v": "Medium-high",
+   "m": 10000,
+   "t": [
+    "Adventure",
+    "Animals",
+    "Birds",
+    "Pirates",
+    "Wild West"
+   ],
+   "f": [
+    "Ante bet",
+    "Bonus buy",
+    "Bonus choice",
+    "Cluster pays",
+    "Expanding reels",
+    "Free spins",
+    "Symbol upgrades"
+   ],
+   "c": "#2b1b1c"
+  },
+  {
+   "n": "Rome: The Golden Age",
+   "s": "NetEnt",
+   "v": "High",
+   "m": 100000,
+   "t": [
+    "Ancient",
+    "Civilizations",
+    "Gold",
+    "Rome"
+   ],
+   "f": [
+    "Climbing multiplier",
+    "Free spins",
+    "Respins"
+   ],
+   "c": "#b46934"
+  },
+  {
+   "n": "Sahara Riches: Cash Collect",
+   "s": "Playtech",
+   "v": "Medium-high",
+   "m": 2117,
+   "t": [
+    "Arabian",
+    "Gold",
+    "Treasure"
+   ],
+   "f": [
+    "Cash collect",
+    "Cash on reels",
+    "Free spins"
+   ],
+   "c": ""
+  },
+  {
+   "n": "Santa's Xmas Rush",
+   "s": "Pragmatic Play",
+   "v": "Very high",
+   "m": 10000,
+   "t": [
+    "Christmas",
+    "Holiday"
+   ],
+   "f": [
+    "Bonus buy",
+    "Cascades",
+    "Cash collect",
+    "Cash on reels",
+    "Cluster pays",
+    "Free spins",
+    "Respins"
+   ],
+   "c": "#413438"
+  },
+  {
+   "n": "Shah Mat",
+   "s": "Red Tiger",
+   "v": "High",
+   "m": 4000,
+   "t": [
+    "Chess",
+    "Fantasy",
+    "GameBoard",
+    "Medieval",
+    "Royal"
+   ],
+   "f": [
+    "Cascades",
+    "Climbing multiplier",
+    "Colossal symbols",
+    "Free spins",
+    "Multiplier wilds",
+    "Sticky wilds"
+   ],
+   "c": "#180c09"
+  },
+  {
+   "n": "Sidewinder Xtra Power",
+   "s": "Reflex Gaming",
+   "v": "High",
+   "m": 3800,
+   "t": [
+    "Bell",
+    "Electricity",
+    "Fruit",
+    "Retro"
+   ],
+   "f": [
+    "Ante bet",
+    "Bonus choice",
+    "Climbing multiplier",
+    "Multiplier trail",
+    "Multiplier wilds",
+    "Mystery symbols",
+    "Random wilds"
+   ],
+   "c": "#1c2c80"
+  },
+  {
+   "n": "Silver & Gold Mine",
+   "s": "Ruby Play",
+   "v": "Medium",
+   "m": 5000,
+   "t": [
+    "Gold",
+    "Mining",
+    "Treasure"
+   ],
+   "f": [
+    "Bonus choice",
+    "Cash on reels",
+    "Free spins",
+    "Hold and win",
+    "Pick bonus",
+    "Respins"
+   ],
+   "c": "#561809"
+  },
+  {
+   "n": "Sizzling Hot 6 Extra Gold",
+   "s": "Greentube",
+   "v": "Medium",
+   "m": 1500,
+   "t": [
+    "Fire",
+    "Gold"
+   ],
+   "f": [
+    "Expanding reels",
+    "Gamble",
+    "Scatter pays",
+    "Win both ways"
+   ],
+   "c": "#540417"
+  },
+  {
+   "n": "Spina Colada",
+   "s": "Yggdrasil",
+   "v": "Low",
+   "m": 3200,
+   "t": [
+    "Beach",
+    "Food",
+    "Fruit",
+    "Party",
+    "Summer",
+    "Vacation"
+   ],
+   "f": [
+    "Free spins",
+    "Guaranteed feature",
+    "Multipliers",
+    "Random wilds",
+    "Respins"
+   ],
+   "c": "#4489b0"
+  },
+  {
+   "n": "Starburst Galaxy",
+   "s": "NetEnt",
+   "v": "Medium-high",
+   "m": 25000,
+   "t": [
+    "Jewels",
+    "Neon",
+    "Space"
+   ],
+   "f": [
+    "Ante bet",
+    "Bonus choice",
+    "Cascades",
+    "Colossal symbols",
+    "Expanding wilds",
+    "Random wilds",
+    "Symbol upgrades"
+   ],
+   "c": "#261228"
+  },
+  {
+   "n": "Sweet Alchemy",
+   "s": "Play'n GO",
+   "v": "High",
+   "m": 3000,
+   "t": [
+    "Candy",
+    "Magic"
+   ],
+   "f": [
+    "Cascades",
+    "Expanding reels",
+    "Free spins"
+   ],
+   "c": "#1d3473"
+  },
+  {
+   "n": "Sweet Bonanza",
+   "s": "Pragmatic Play",
+   "v": "High",
+   "m": 21175,
+   "t": [
+    "Food",
+    "Party"
+   ],
+   "f": [
+    "Ante bet",
+    "Bonus buy",
+    "Cascades",
+    "Climbing multiplier",
+    "Free spins",
+    "Multipliers",
+    "Scatter pays"
+   ],
+   "c": "#f7d1ed"
+  },
+  {
+   "n": "Sweet Bonanza 1000",
+   "s": "Pragmatic Play",
+   "v": "Very high",
+   "m": 25000,
+   "t": [
+    "Candy",
+    "Fantasy",
+    "Food",
+    "Fruit"
+   ],
+   "f": [
+    "Ante bet",
+    "Bonus buy",
+    "Cascades",
+    "Climbing multiplier",
+    "Free spins",
+    "Multipliers"
+   ],
+   "c": "#7418f1"
+  },
+  {
+   "n": "Sweet Bonanza Xmas",
+   "s": "Pragmatic Play",
+   "v": "Very high",
+   "m": 21175,
+   "t": [
+    "Candy",
+    "Christmas",
+    "Fruit",
+    "Holiday",
+    "Winter"
+   ],
+   "f": [
+    "Ante bet",
+    "Cascades",
+    "Free spins",
+    "Multipliers",
+    "Scatter pays"
+   ],
+   "c": "#18216a"
+  },
+  {
+   "n": "Temple Guardians",
+   "s": "Pragmatic Play",
+   "v": "Very high",
+   "m": 10000,
+   "t": [
+    "Adventure",
+    "Fantasy",
+    "Magic"
+   ],
+   "f": [
+    "Bonus buy",
+    "Cash collect",
+    "Cash on reels",
+    "Hold and win",
+    "Respins"
+   ],
+   "c": "#14429e"
+  },
+  {
+   "n": "The Golden Mummy Hold and Win",
+   "s": "Iron Dog Studio",
+   "v": "Medium-high",
+   "m": 5000,
+   "t": [
+    "Egypt",
+    "Mummy",
+    "Treasure"
+   ],
+   "f": [
+    "Bonus buy",
+    "Cash collect",
+    "Cash on reels",
+    "Hold and win",
+    "Jackpots",
+    "Respins"
+   ],
+   "c": "#400d3f"
+  },
+  {
+   "n": "The Quest for Viper Wilds",
+   "s": "R3SPIN",
+   "v": "Medium",
+   "m": 4785,
+   "t": [
+    "Adventure",
+    "Animals",
+    "Jungle"
+   ],
+   "f": [
+    "Expanding wilds",
+    "Free spins",
+    "Guaranteed feature",
+    "Multiplier wilds"
+   ],
+   "c": "#201e18"
+  },
+  {
+   "n": "Tombstone",
+   "s": "Nolimit City",
+   "v": "Very high",
+   "m": 11456,
+   "t": [
+    "Crime",
+    "Money",
+    "Mystery",
+    "Robbery",
+    "Weapons",
+    "Wild West"
+   ],
+   "f": [
+    "Climbing multiplier",
+    "Free spins",
+    "Multiplier wilds",
+    "Nudges",
+    "Stacked symbols",
+    "Sticky wilds",
+    "Ways to win"
+   ],
+   "c": "#d1af91"
+  },
+  {
+   "n": "Towering Pays Excalibur",
+   "s": "Gameslab",
+   "v": "Medium-high",
+   "m": 5990,
+   "t": [
+    "Fantasy",
+    "Magic",
+    "Medieval",
+    "Royal"
+   ],
+   "f": [
+    "Ante bet",
+    "Expanding reels",
+    "Free spins",
+    "Hold and win",
+    "Multipliers",
+    "Mystery symbols",
+    "Wheel bonus"
+   ],
+   "c": "#120919"
+  },
+  {
+   "n": "Triple Treasure",
+   "s": "AGS",
+   "v": "Medium-low",
+   "m": 560,
+   "t": [
+    "Gold",
+    "Jewels",
+    "Treasure"
+   ],
+   "f": [
+    "Multiplier wilds",
+    "Multipliers"
+   ],
+   "c": ""
+  },
+  {
+   "n": "Valley of the Gods 2",
+   "s": "Yggdrasil",
+   "v": "Medium-high",
+   "m": 5481,
+   "t": [
+    "Ancient",
+    "Egypt",
+    "Mystery",
+    "Mythical",
+    "Treasure"
+   ],
+   "f": [
+    "Climbing multiplier",
+    "Dynamic ways",
+    "Expanding wilds",
+    "Respins",
+    "Sticky wilds",
+    "Symbol removal"
+   ],
+   "c": "#80758f"
+  },
+  {
+   "n": "Wheel of Happiness",
+   "s": "Pragmatic Play",
+   "v": "High",
+   "m": 4000,
+   "t": [
+    "Arcade",
+    "Gold",
+    "Mystery"
+   ],
+   "f": [
+    "Ante bet",
+    "Cascades",
+    "Climbing multiplier",
+    "Free spins",
+    "Multiplier wilds",
+    "Ways to win",
+    "Wheel bonus"
+   ],
+   "c": "#7f2110"
+  },
+  {
+   "n": "Wild O'Clock",
+   "s": "Red Tiger",
+   "v": "Medium-high",
+   "m": 2000,
+   "t": [
+    "Time"
+   ],
+   "f": [
+    "Climbing multiplier",
+    "Colossal symbols",
+    "Expanding wilds",
+    "Free spins",
+    "Guaranteed feature",
+    "Multiplier wilds",
+    "Random wilds"
+   ],
+   "c": "#3a1d47"
+  },
+  {
+   "n": "Wolf Hunters",
+   "s": "Yggdrasil",
+   "v": "Low",
+   "m": 2324,
+   "t": [
+    "Fantasy",
+    "Horror",
+    "Mystery",
+    "Wolf"
+   ],
+   "f": [
+    "Expanding wilds",
+    "Free spins",
+    "Respins",
+    "Spreading wilds",
+    "Sticky wilds",
+    "Symbol upgrades"
+   ],
+   "c": "#231d1f"
+  },
+  {
+   "n": "Zeus vs Hades – Gods of War",
+   "s": "Pragmatic Play",
+   "v": "High",
+   "m": 15000,
+   "t": [
+    "Adventure",
+    "Fantasy",
+    "Greek",
+    "Mythical",
+    "War"
+   ],
+   "f": [
+    "Bonus buy",
+    "Bonus choice",
+    "Expanding wilds",
+    "Free spins",
+    "Multiplier wilds",
+    "Sticky wilds"
+   ],
+   "c": "#08597a"
+  }
+ ],
+ "heroes": [
+  {
+   "id": "gates",
+   "n": "Gates of Olympus 2500",
+   "s": "Pragmatic Play",
+   "v": "High",
+   "m": 25000,
+   "grid": "6 x 5",
+   "win": "Pay anywhere",
+   "buy": "Yes",
+   "f": [
+    "Cascades",
+    "Multipliers",
+    "Climbing multiplier",
+    "Free spins",
+    "Wheel bonus",
+    "Bonus choice",
+    "Ante bet"
+   ],
+   "t": [
+    "Greek",
+    "Mythical",
+    "Ancient"
+   ],
+   "copy": "Pay-anywhere wins, cascading reels and multipliers that keep building through the bonus. High volatility, with a ceiling of 25,000x."
+  },
+  {
+   "id": "pirots",
+   "n": "Pirots 3",
+   "s": "ELK Studios",
+   "v": "Medium-high",
+   "m": 10000,
+   "grid": "6 x 7",
+   "win": "Cluster pays",
+   "buy": "Yes",
+   "f": [
+    "Cluster pays",
+    "Expanding reels",
+    "Symbol upgrades",
+    "Free spins",
+    "Bonus choice",
+    "Ante bet"
+   ],
+   "t": [
+    "Pirates",
+    "Birds",
+    "Wild West",
+    "Adventure"
+   ],
+   "copy": "Pirate birds collect gems across a cluster-pays grid that grows as you play, with symbol upgrades and a choice of bonuses. Medium-high volatility, up to 10,000x."
+  },
+  {
+   "id": "got",
+   "n": "Game of Thrones",
+   "s": null,
+   "v": "Medium-high",
+   "m": 10000,
+   "grid": "6 x 4",
+   "win": "4,096 ways",
+   "buy": "No",
+   "f": [
+    "Ways to win",
+    "Scatter pays",
+    "Features that carry over"
+   ],
+   "t": [
+    "TV show",
+    "Medieval",
+    "Branded"
+   ],
+   "copy": "The TV series on the reels. 4,096 ways to win, with features that carry over from spin to spin. Medium-high volatility, up to 10,000x."
+  },
+  {
+   "id": "duck",
+   "n": "Duck Hunters Happy Hour",
+   "s": "Nolimit City",
+   "v": "Very high",
+   "m": 33333,
+   "grid": "6 reels, 4 to 6 rows",
+   "win": "Cascading wins",
+   "buy": "Yes",
+   "f": [
+    "Cascades",
+    "Mystery symbols",
+    "Climbing multiplier",
+    "Symbol upgrades",
+    "Free spins",
+    "Ante bet"
+   ],
+   "t": [
+    "Hunting",
+    "Party",
+    "American",
+    "Retro"
+   ],
+   "copy": "A backyard party with a hunting twist. Cascading wins, mystery symbols and a multiplier that keeps climbing. Very high volatility, up to 33,333x."
+  },
+  {
+   "id": "gonzo",
+   "n": "Gonzo's Quest Megaways",
+   "s": "Red Tiger",
+   "v": "Medium-high",
+   "m": 20000,
+   "grid": "6 reels, 2 to 7 rows",
+   "win": "Megaways, up to 117,649 ways",
+   "buy": "No",
+   "f": [
+    "Megaways",
+    "Cascades",
+    "Climbing multiplier",
+    "Sticky wilds",
+    "Free spins"
+   ],
+   "t": [
+    "Aztec",
+    "Jungle",
+    "Adventure"
+   ],
+   "copy": "Gonzo's jungle hunt on Megaways reels with up to 117,649 ways. Every cascade clears the winning symbols and pushes the multiplier up. Medium-high volatility, up to 20,000x."
+  },
+  {
+   "id": "cashvolt",
+   "n": "Cash Volt Tap-A-Roo",
+   "s": "Red Tiger",
+   "v": "High",
+   "m": 2500,
+   "grid": "5 x 3, 20 lines",
+   "win": "Tap for instant wins",
+   "buy": "Yes",
+   "f": [
+    "Lucky tap",
+    "Multiplier trail",
+    "Bonus choice",
+    "Colossal symbols",
+    "Random bonus"
+   ],
+   "t": [
+    "Retro",
+    "Neon",
+    "Electricity"
+   ],
+   "copy": "A tap game rather than a spinning slot. Tap for instant results, climb the multiplier trail and pick your bonus. High volatility, up to 2,500x."
+  }
+ ]
+}
